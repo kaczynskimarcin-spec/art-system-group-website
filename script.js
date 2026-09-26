@@ -1,6 +1,6 @@
 const articles = document.querySelectorAll('.articles details');
 
-articles.forEach(article => {
+articles.forEach((article) => {
 
     article.addEventListener('toggle', () => {
 
@@ -8,7 +8,7 @@ articles.forEach(article => {
             return;
         }
 
-        articles.forEach(otherArticle => {
+        articles.forEach((otherArticle) => {
 
             if (otherArticle !== article) {
                 otherArticle.open = false;
