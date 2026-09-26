@@ -1,785 +1,1389 @@
-<!DOCTYPE html>
-<html lang="pl">
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
 
-<head>
-    <meta charset="UTF-8">
 
-    <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1"
-    >
+:root {
+--ink: #0d1b2b;
+--muted: #637181;
+--blue: #087fee;
+--line: #dfe5eb;
+--light: #f5f7fa;
+}
 
-    <meta
-            name="description"
-            content="ART SYSTEM GROUP — monitoring CCTV dla domu i firmy. Poznaj rozwiązania, przeczytaj poradnik i porozmawiaj o swoim systemie."
-    >
 
-    <title>ART SYSTEM GROUP — Bezpieczeństwo w dobrym kadrze</title>
+* {
+box-sizing: border-box;
+}
 
-    <link
-            rel="icon"
-            type="image/svg+xml"
-            href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b1426'/%3E%3Ccircle cx='32' cy='32' r='20' fill='none' stroke='%2300a9ff' stroke-width='5'/%3E%3Ccircle cx='32' cy='32' r='9' fill='%2300a9ff'/%3E%3C/svg%3E"
-    >
 
-    <link rel="stylesheet" href="style.css">
-</head>
+html {
+scroll-behavior: smooth;
+scroll-padding-top: 30px;
+}
 
-<body>
 
-<header>
+body {
+margin: 0;
 
-    <a
-            class="wordmark"
-            href="#"
-            aria-label="ART SYSTEM GROUP — strona główna"
-    >
-        <span>
-            <b>ART</b> SYSTEM
-        </span>
+color: var(--ink);
 
-        <small>G R O U P</small>
-    </a>
+font-family: Manrope, Arial, sans-serif;
 
-    <nav aria-label="Menu główne">
-        <a href="#oferta">Rozwiązania</a>
-        <a href="#proces">Jak pracujemy</a>
-        <a href="#poradnik">Poradnik</a>
-    </nav>
+background: #ffffff;
+}
 
-    <a class="nav-contact" href="#kontakt">
-        Porozmawiajmy
-        <span>↗</span>
-    </a>
 
-</header>
+a {
+color: inherit;
+text-decoration: none;
+}
 
 
-<main>
+button,
+a,
+summary {
+-webkit-tap-highlight-color: transparent;
+}
 
-    <!-- HERO -->
 
-    <section class="hero">
+a:focus-visible,
+summary:focus-visible {
+outline: 3px solid var(--blue);
+outline-offset: 5px;
+}
 
-        <div class="hero-copy">
 
-            <div class="eyebrow">
-                <span class="line"></span>
-                INTELIGENTNE SYSTEMY BEZPIECZEŃSTWA
-            </div>
+/* ========================================
+HEADER
+======================================== */
 
-            <h1>
-                Bezpieczeństwo.<br>
-                W dobrym<br>
-                <em>kadrze.</em>
-            </h1>
+header {
+height: 112px;
 
-            <p>
-                Twój dom. Twoja firma. Twój spokój.<br>
-                Monitoring CCTV dopasowany do miejsc,<br class="desktop">
-                które mają dla Ciebie znaczenie.
-            </p>
+max-width: 1440px;
 
-            <div class="hero-actions">
+margin: auto;
+padding: 0 5%;
 
-                <a class="button" href="#kontakt">
-                    Porozmawiajmy o monitoringu
-                    <span>↗</span>
-                </a>
+display: flex;
+align-items: center;
+justify-content: space-between;
 
-                <a class="text-link" href="#oferta">
-                    Poznaj rozwiązania ↓
-                </a>
+border-bottom: 1px solid var(--line);
+}
 
-            </div>
 
-            <div class="hero-note">
-                <span>01 / CCTV</span>
-                <span>Technologia, która daje poczucie kontroli.</span>
-            </div>
+.wordmark {
+display: flex;
+flex-direction: column;
+align-items: center;
 
-        </div>
+font-size: 23px;
+font-weight: 800;
 
+letter-spacing: -1px;
+line-height: 1.15;
+}
 
-        <div class="hero-art">
 
-            <div class="art-top">
-                <span>ART SYSTEM GROUP</span>
-                <span>EST. SECURITY</span>
-            </div>
+.wordmark b {
+color: var(--blue);
+}
 
-            <img
-                    src="assets/logo.jpeg"
-                    alt="Logo ART SYSTEM GROUP — srebrna tarcza z niebieskim obiektywem"
-                    width="1536"
-                    height="1024"
-            >
 
-            <div class="art-bottom">
-                <span>INTELLIGENT SECURITY SYSTEMS</span>
-                <span>+</span>
-            </div>
+.wordmark small {
+margin-top: 5px;
 
-        </div>
+font-size: 10px;
+font-weight: 600;
 
-    </section>
+letter-spacing: 5px;
+}
 
 
-    <!-- APPLICATION STRIP -->
+nav {
+display: flex;
 
-    <div class="application-strip">
-        <span>JEDEN CEL. RÓŻNE PRZESTRZENIE.</span>
-        <span>Dom i posesja</span>
-        <i></i>
-        <span>Biuro i lokal</span>
-        <i></i>
-        <span>Magazyn i obiekt</span>
-    </div>
+gap: 36px;
 
+font-size: 14px;
+font-weight: 600;
+}
 
-    <!-- ROZWIĄZANIA -->
 
-    <section id="oferta" class="section">
+nav a,
+.text-link,
+.footer-links a {
+transition: color .2s;
+}
 
-        <div class="section-heading">
 
-            <div>
+nav a:hover,
+.text-link:hover,
+.footer-links a:hover {
+color: var(--blue);
+}
 
-                <div class="eyebrow">
-                    01 — ROZWIĄZANIA
-                </div>
 
-                <h2>
-                    Więcej niż obraz.<br>
-                    Pełniejszy ogląd sytuacji.
-                </h2>
+.nav-contact {
+padding: 14px 19px;
 
-            </div>
+border: 1px solid var(--line);
+border-radius: 5px;
 
-            <p>
-                Dobry monitoring zaczyna się od zrozumienia miejsca.
-                Dobieramy rozwiązanie do tego, co chcesz widzieć i chronić.
-            </p>
+font-size: 14px;
+font-weight: 700;
 
-        </div>
+transition: border-color .2s;
+}
 
 
-        <div class="service-grid">
+.nav-contact:hover {
+border-color: var(--blue);
+}
 
-            <article class="service">
 
-                <span class="service-number">
-                    01 /
-                </span>
+.nav-contact span {
+margin-left: 20px;
 
-                <div class="icon">
-                    ◎
-                </div>
+color: var(--blue);
+}
 
-                <h3>
-                    Monitoring CCTV
-                </h3>
 
-                <p>
-                    Obserwacja wejść, posesji i najważniejszych stref.
-                    Przemyślane rozmieszczenie kamer i obraz dopasowany
-                    do warunków.
-                </p>
+/* ========================================
+HERO
+======================================== */
 
-                <a href="#kontakt">
-                    Dobierz monitoring
-                    <span>↗</span>
-                </a>
+.hero {
+max-width: 1440px;
 
-            </article>
+margin: auto;
+padding: 80px 5% 0;
 
+display: grid;
+grid-template-columns: 1.05fr 1fr;
 
-            <article class="service">
+gap: 30px;
 
-                <span class="service-number">
-                    02 /
-                </span>
+overflow: hidden;
+}
 
-                <div class="icon">
-                    ▣
-                </div>
 
-                <h3>
-                    Podgląd i nagrania
-                </h3>
+.eyebrow {
+display: flex;
+align-items: center;
 
-                <p>
-                    Sprawdź, co dzieje się na miejscu.
-                    Wygodny dostęp do obrazu i archiwum,
-                    zgodnie z możliwościami wybranego systemu.
-                </p>
+gap: 12px;
 
-                <a href="#kontakt">
-                    Zapytaj o możliwości
-                    <span>↗</span>
-                </a>
+font-size: 11px;
+font-weight: 800;
 
-            </article>
+letter-spacing: 1.8px;
+line-height: 1.6;
+}
 
 
-            <article class="service">
+.line {
+display: block;
 
-                <span class="service-number">
-                    03 /
-                </span>
+width: 26px;
+height: 2px;
 
-                <div class="icon">
-                    ⤢
-                </div>
+background: var(--blue);
+}
 
-                <h3>
-                    Rozbudowa systemu
-                </h3>
 
-                <p>
-                    Masz już kamery?
-                    Porozmawiajmy o modernizacji,
-                    poprawie zasięgu obserwacji
-                    i dopasowaniu systemu do nowych potrzeb.
-                </p>
+h1 {
+margin: 28px 0 27px;
 
-                <a href="#kontakt">
-                    Omów swój system
-                    <span>↗</span>
-                </a>
+font-size: clamp(55px, 5.3vw, 82px);
+font-weight: 600;
 
-            </article>
+letter-spacing: -4.5px;
+line-height: 1.07;
+}
 
-        </div>
 
-    </section>
+em {
+color: var(--blue);
 
+font-style: normal;
+}
 
-    <!-- JAK PRACUJEMY -->
 
-    <section
-            id="proces"
-            class="process section"
-    >
+.hero-copy > p {
+color: var(--muted);
 
-        <div class="process-intro">
+font-size: 17px;
+line-height: 1.85;
+}
 
-            <div class="eyebrow">
-                02 — OD ROZMOWY DO OBRAZU
-            </div>
 
-            <h2>
-                Jasny plan.<br>
-                Spokojna głowa.
-            </h2>
+.hero-actions {
+margin-top: 31px;
 
-            <p>
-                Bez przypadkowych kamer.<br>
-                Bez niepotrzebnych komplikacji.
-            </p>
+display: flex;
+align-items: center;
 
-            <a
-                    href="#kontakt"
-                    class="text-link"
-            >
-                Zacznijmy od rozmowy ↗
-            </a>
+gap: 24px;
+}
 
-        </div>
 
+.button {
+padding: 18px 21px;
 
-        <div class="steps">
+display: inline-flex;
+align-items: center;
 
-            <div>
+gap: 22px;
 
-                <span>01</span>
+color: white;
+background: var(--blue);
 
-                <section>
+border-radius: 4px;
 
-                    <h3>
-                        Poznajemy Twoje potrzeby
-                    </h3>
+font-size: 13px;
+font-weight: 700;
 
-                    <p>
-                        Co chcesz obserwować?
-                        Jak wygląda obiekt?
-                        Ustalamy najważniejsze miejsca i oczekiwania.
-                    </p>
+transition: background .2s;
+}
 
-                </section>
 
-            </div>
+.button:hover {
+background: #0066cb;
+}
 
 
-            <div>
+.text-link {
+font-size: 13px;
+font-weight: 700;
+}
 
-                <span>02</span>
 
-                <section>
+.hero-note {
+margin-top: 65px;
+padding: 23px 0;
 
-                    <h3>
-                        Dobieramy rozwiązanie
-                    </h3>
+display: flex;
 
-                    <p>
-                        Omawiamy kamery, sposób zapisu i dostęp do obrazu.
-                        Zakres dopasowujemy do obiektu i budżetu.
-                    </p>
+gap: 24px;
 
-                </section>
+border-top: 1px solid var(--line);
 
-            </div>
+color: var(--muted);
 
+font-size: 11px;
+}
 
-            <div>
 
-                <span>03</span>
+.hero-note span:first-child {
+color: var(--ink);
 
-                <section>
+font-weight: 800;
 
-                    <h3>
-                        Uruchamiamy i wyjaśniamy
-                    </h3>
+white-space: nowrap;
+}
 
-                    <p>
-                        Montaż, konfiguracja i pokazanie obsługi —
-                        tak, aby korzystanie z systemu było proste.
-                    </p>
 
-                </section>
+.hero-art {
+position: relative;
 
-            </div>
+display: flex;
+flex-direction: column;
+justify-content: center;
 
-        </div>
+overflow: hidden;
 
-    </section>
+background: #f8fafc;
 
+border: 1px solid #e9eef4;
+border-radius: 5px 5px 0 0;
+}
 
-    <!-- PORADNIK -->
 
-    <section
-            id="poradnik"
-            class="section"
-    >
+.hero-art img {
+width: 100%;
+height: auto;
 
-        <div class="section-heading">
+display: block;
 
-            <div>
+mix-blend-mode: multiply;
+}
 
-                <div class="eyebrow">
-                    03 — WARTO WIEDZIEĆ
-                </div>
 
-                <h2>
-                    O monitoringu.<br>
-                    Po ludzku.
-                </h2>
+.art-top,
+.art-bottom {
+position: absolute;
 
-            </div>
+left: 25px;
+right: 25px;
 
-            <p>
-                Krótki poradnik dla tych,
-                którzy chcą wiedzieć,
-                od czego zacząć.
-            </p>
+display: flex;
+justify-content: space-between;
 
-        </div>
+color: #74818d;
 
+font-size: 10px;
 
-        <div class="articles">
+letter-spacing: 1.6px;
+}
 
-            <!-- ARTICLE 1 -->
 
-            <details>
+.art-top {
+top: 24px;
+}
 
-                <summary>
 
-                    <div class="article-visual visual-one">
+.art-bottom {
+bottom: 25px;
+}
 
-                        <span>
-                            01
-                        </span>
 
-                        <b>
-                            DOBRY<br>
-                            PUNKT WIDZENIA.
-                        </b>
+.art-bottom span:last-child {
+color: var(--blue);
 
-                        <small>
-                            PLANOWANIE SYSTEMU
-                        </small>
+font-size: 24px;
 
-                    </div>
+line-height: 12px;
+}
 
 
-                    <div class="article-body">
+/* ========================================
+APPLICATION STRIP
+======================================== */
 
-                        <span class="tag">
-                            PODSTAWY · 2 MIN CZYTANIA
-                        </span>
+.application-strip {
+padding: 27px 5%;
 
-                        <h3>
-                            Od czego zacząć monitoring domu?
-                        </h3>
+display: flex;
+align-items: center;
+justify-content: center;
 
-                        <p>
-                            Trzy pytania, które warto sobie zadać
-                            przed wyborem kamer.
-                        </p>
+gap: 55px;
 
-                        <span class="read">
-                            Czytaj poradnik
-                            <b>↗</b>
-                        </span>
+color: white;
+background: var(--ink);
 
-                    </div>
+font-size: 15px;
+}
 
-                </summary>
 
+.application-strip > span:first-child {
+color: #90a0b3;
 
-                <div class="article-expanded">
+font-size: 10px;
 
-                    <h4>
-                        Najpierw miejsca, potem sprzęt
-                    </h4>
+letter-spacing: 1.4px;
+}
 
-                    <p>
-                        Wypisz strefy, które chcesz obserwować:
-                        wejście, bramę, podjazd czy zaplecze.
-                        Zastanów się, czy wystarczy zobaczyć obecność osoby,
-                        czy potrzebujesz rozpoznawać szczegóły.
-                    </p>
 
+.application-strip i {
+width: 3px;
+height: 3px;
 
-                    <h4>
-                        Co widać po zmroku?
-                    </h4>
+background: #4b637b;
 
-                    <p>
-                        Zwróć uwagę na oświetlenie i przeszkody.
-                        To samo miejsce w dzień i w nocy
-                        może wymagać innego ustawienia kamery.
-                    </p>
+border-radius: 50%;
+}
 
 
-                    <h4>
-                        Jak chcesz korzystać z nagrań?
-                    </h4>
+/* ========================================
+COMMON SECTIONS
+======================================== */
 
-                    <p>
-                        Ustal oczekiwany czas archiwizacji
-                        i kto ma mieć dostęp.
-                        Te informacje pomagają dobrać zapis
-                        oraz sposób obsługi.
-                    </p>
+.section {
+max-width: 1440px;
 
-                </div>
+margin: auto;
+padding: 100px 5%;
+}
 
-            </details>
 
+.section-heading {
+margin-bottom: 50px;
 
-            <!-- ARTICLE 2 -->
+display: flex;
+justify-content: space-between;
+align-items: flex-end;
 
-            <details>
+gap: 40px;
+}
 
-                <summary>
 
-                    <div class="article-visual visual-two">
+h2 {
+margin: 18px 0 0;
 
-                        <span>
-                            02
-                        </span>
+font-size: clamp(34px, 3.1vw, 48px);
+font-weight: 600;
 
-                        <b>
-                            SZCZEGÓŁY<br>
-                            MAJĄ ZNACZENIE.
-                        </b>
+line-height: 1.2;
 
-                        <small>
-                            WYBÓR KAMER
-                        </small>
+letter-spacing: -2px;
+}
 
-                    </div>
 
+.section-heading > p {
+max-width: 340px;
 
-                    <div class="article-body">
+margin-bottom: 4px;
 
-                        <span class="tag">
-                            SPRZĘT · 2 MIN CZYTANIA
-                        </span>
+color: var(--muted);
 
-                        <h3>
-                            Czy więcej megapikseli to wszystko?
-                        </h3>
+font-size: 15px;
 
-                        <p>
-                            Na jakość obrazu wpływa znacznie więcej
-                            niż jedna liczba.
-                        </p>
+line-height: 1.85;
+}
 
-                        <span class="read">
-                            Czytaj poradnik
-                            <b>↗</b>
-                        </span>
 
-                    </div>
+/* ========================================
+ABOUT
+======================================== */
 
-                </summary>
+.about-description {
+max-width: 420px;
+}
 
 
-                <div class="article-expanded">
+.about-description p {
+margin: 0 0 18px;
 
-                    <h4>
-                        Liczy się cały kadr
-                    </h4>
+color: var(--muted);
 
-                    <p>
-                        Rozdzielczość jest jednym z parametrów.
-                        Równie ważne są obiektyw, kąt widzenia,
-                        odległość od obserwowanego miejsca
-                        i warunki oświetleniowe.
-                    </p>
+font-size: 15px;
 
+line-height: 1.85;
+}
 
-                    <h4>
-                        Szerzej nie zawsze znaczy lepiej
-                    </h4>
 
-                    <p>
-                        Szeroki kadr pozwala obserwować większy obszar,
-                        ale odległe obiekty zajmują mniejszą część obrazu.
-                        Warto określić, jakie szczegóły naprawdę
-                        muszą być widoczne.
-                    </p>
+.about-grid {
+display: grid;
 
+grid-template-columns: repeat(3, 1fr);
 
-                    <h4>
-                        Dobór do miejsca
-                    </h4>
+border-top: 1px solid var(--line);
+border-bottom: 1px solid var(--line);
+}
 
-                    <p>
-                        Wybór sprzętu warto poprzedzić oceną
-                        konkretnej strefy.
-                        Sama liczba megapikseli
-                        nie daje pełnej odpowiedzi.
-                    </p>
 
-                </div>
+.about-item {
+padding: 38px 30px 40px 0;
+}
 
-            </details>
 
+.about-item + .about-item {
+padding-left: 30px;
 
-            <!-- ARTICLE 3 -->
+border-left: 1px solid var(--line);
+}
 
-            <details>
 
-                <summary>
+.about-item > span {
+color: var(--blue);
 
-                    <div class="article-visual visual-three">
+font-size: 11px;
+font-weight: 700;
+}
 
-                        <span>
-                            03
-                        </span>
 
-                        <b>
-                            BLISKO.<br>
-                            NAWET Z DALEKA.
-                        </b>
+.about-item h3 {
+margin: 26px 0 14px;
 
-                        <small>
-                            DOSTĘP DO OBRAZU
-                        </small>
+font-size: 20px;
 
-                    </div>
+letter-spacing: -.5px;
+}
 
 
-                    <div class="article-body">
+.about-item p {
+max-width: 330px;
 
-                        <span class="tag">
-                            OBSŁUGA · 2 MIN CZYTANIA
-                        </span>
+margin: 0;
 
-                        <h3>
-                            Monitoring w telefonie — jak to działa?
-                        </h3>
+color: var(--muted);
 
-                        <p>
-                            Wygodny podgląd zaczyna się
-                            od właściwej konfiguracji.
-                        </p>
+font-size: 14px;
 
-                        <span class="read">
-                            Czytaj poradnik
-                            <b>↗</b>
-                        </span>
+line-height: 1.85;
+}
 
-                    </div>
 
-                </summary>
+/* ========================================
+PROCESS
+======================================== */
 
+.process {
+max-width: none;
 
-                <div class="article-expanded">
+padding-left: max(5%, calc((100vw - 1296px) / 2));
+padding-right: max(5%, calc((100vw - 1296px) / 2));
 
-                    <h4>
-                        System i aplikacja
-                    </h4>
+display: grid;
 
-                    <p>
-                        Kompatybilny system może udostępniać
-                        podgląd w aplikacji producenta.
-                        Dostępne funkcje zależą od urządzeń
-                        oraz ich konfiguracji.
-                    </p>
+grid-template-columns: 1fr 1fr;
 
+gap: 70px;
 
-                    <h4>
-                        Łącze ma znaczenie
-                    </h4>
+background: var(--light);
+}
 
-                    <p>
-                        Do zdalnego podglądu potrzebne jest
-                        połączenie sieciowe.
-                        Płynność obrazu zależy między innymi
-                        od jakości połączenia w obiekcie i na telefonie.
-                    </p>
 
+.process-intro p {
+margin: 26px 0;
 
-                    <h4>
-                        Dostęp pod kontrolą
-                    </h4>
+color: var(--muted);
 
-                    <p>
-                        Używaj osobnego, mocnego hasła,
-                        aktualizuj urządzenia
-                        i przyznawaj dostęp tylko potrzebnym osobom.
-                        Jeśli system oferuje dodatkowe uwierzytelnianie,
-                        warto je włączyć.
-                    </p>
+line-height: 1.8;
+}
 
-                </div>
 
-            </details>
+.steps > div {
+padding: 26px 0;
 
-        </div>
+display: flex;
 
-    </section>
+gap: 26px;
 
+border-bottom: 1px solid #dbe2e9;
+}
 
-    <!-- CONTACT -->
 
-    <section
-            id="kontakt"
-            class="contact"
-    >
+.steps > div:first-child {
+padding-top: 0;
+}
 
-        <div>
 
-            <div class="eyebrow">
-                04 — POROZMAWIAJMY
-            </div>
+.steps > div > span {
+padding-top: 5px;
 
-            <h2>
-                Twój spokój<br>
-                zaczyna się od<br>
-                <em>rozmowy.</em>
-            </h2>
+color: var(--blue);
 
-            <p>
-                Planujesz nowy monitoring
-                czy chcesz rozbudować<br class="desktop">
-                obecny?
-                Opowiedz nam o swoim obiekcie.
-            </p>
+font-size: 13px;
+}
 
-        </div>
 
+.steps section {
+margin: 0;
+}
 
-        <div class="contact-people">
 
-            <div>
+.steps h3 {
+margin: 0 0 10px;
 
-                <span>
-                    DORADZTWO TECHNICZNE
-                </span>
+font-size: 19px;
+}
 
-                <h3>
-                    Jarosław Wilk
-                </h3>
 
-                <p>
-                    Dyrektor ds. Technicznych
-                </p>
+.steps p {
+margin: 0;
 
-                <a href="tel:+48506711071">
-                    +48 506 711 071
-                    <b>↗</b>
-                </a>
+color: var(--muted);
 
-            </div>
+font-size: 14px;
 
+line-height: 1.8;
+}
 
-            <div>
 
-                <span>
-                    KONTAKT BIZNESOWY
-                </span>
+/* ========================================
+ARTICLES
+======================================== */
 
-                <h3>
-                    Andrzej Zalewski
-                </h3>
+.articles {
+display: grid;
 
-                <p>
-                    Prezes Zarządu
-                </p>
+grid-template-columns: repeat(3, 1fr);
 
-                <a href="tel:+48515408386">
-                    +48 515 408 386
-                    <b>↗</b>
-                </a>
+gap: 25px;
 
-            </div>
+align-items: start;
+}
 
-        </div>
 
-    </section>
+details {
+border-bottom: 1px solid var(--line);
+}
 
-</main>
 
+summary {
+cursor: pointer;
 
-<!-- FOOTER -->
+list-style: none;
+}
 
-<footer>
 
-    <a
-            class="wordmark"
-            href="#"
-    >
-        <span>
-            <b>ART</b> SYSTEM
-        </span>
+summary::-webkit-details-marker {
+display: none;
+}
 
-        <small>
-            G R O U P
-        </small>
-    </a>
 
-    <p>
-        Intelligent Security Systems
-    </p>
+.article-visual {
+height: 230px;
 
-    <span>
-        © 2026 ART SYSTEM GROUP
-    </span>
+padding: 25px;
 
-    <a href="#">
-        Do góry ↑
-    </a>
+display: flex;
+flex-direction: column;
+justify-content: space-between;
 
-</footer>
+color: #075eb6;
+background: #e7f1ff;
+}
 
 
-<script src="script.js"></script>
+.article-visual > span {
+font-size: 12px;
+}
 
-</body>
 
-</html>
+.article-visual > b {
+font-size: 29px;
+
+letter-spacing: -1.1px;
+
+line-height: 1.2;
+}
+
+
+.article-visual small {
+font-size: 10px;
+
+letter-spacing: 1.4px;
+}
+
+
+.visual-two {
+color: #f1f6ff;
+
+background: #132338;
+}
+
+
+.visual-three {
+color: #34485f;
+
+background: #edf0f4;
+}
+
+
+.article-body {
+padding: 24px 0;
+}
+
+
+.tag {
+color: var(--muted);
+
+font-size: 10px;
+
+letter-spacing: 1px;
+}
+
+
+.article-body h3 {
+margin: 13px 0;
+
+font-size: 20px;
+
+line-height: 1.45;
+
+letter-spacing: -.6px;
+}
+
+
+.article-body p {
+color: var(--muted);
+
+font-size: 14px;
+
+line-height: 1.8;
+}
+
+
+.read {
+margin-top: 25px;
+
+display: flex;
+justify-content: space-between;
+
+font-size: 12px;
+font-weight: 700;
+}
+
+
+.read b {
+color: var(--blue);
+
+transition: transform .2s;
+}
+
+
+details[open] .read b {
+transform: rotate(90deg);
+}
+
+
+.article-expanded {
+padding-bottom: 20px;
+
+color: var(--muted);
+
+font-size: 14px;
+
+line-height: 1.85;
+}
+
+
+.article-expanded h4 {
+margin: 20px 0 5px;
+
+color: var(--ink);
+
+font-size: 16px;
+}
+
+
+.article-expanded p {
+margin: 0 0 16px;
+}
+
+
+/* ========================================
+CONTACT
+======================================== */
+
+.contact {
+padding: 90px max(5%, calc((100vw - 1296px) / 2));
+
+display: grid;
+
+grid-template-columns: 1fr 1fr;
+
+gap: 80px;
+
+color: white;
+background: var(--ink);
+}
+
+
+.contact .eyebrow {
+color: #8eaccb;
+}
+
+
+.contact h2 {
+font-size: 57px;
+
+letter-spacing: -2.5px;
+}
+
+
+.contact em {
+color: #3b9fff;
+}
+
+
+.contact p {
+color: #9faec0;
+
+font-size: 15px;
+
+line-height: 1.8;
+}
+
+
+.contact-people {
+padding-top: 10px;
+}
+
+
+.contact-people > div {
+padding: 25px 0;
+
+border-bottom: 1px solid #2d3b4e;
+}
+
+
+.contact-people > div > span {
+color: #93a7be;
+
+font-size: 10px;
+
+letter-spacing: 1.7px;
+}
+
+
+.contact-people h3 {
+margin: 17px 0 0;
+
+font-size: 23px;
+font-weight: 500;
+}
+
+
+.contact-people p {
+margin: 6px 0 20px;
+
+font-size: 13px;
+}
+
+
+.contact-people a {
+display: flex;
+justify-content: space-between;
+
+font-size: 29px;
+
+letter-spacing: -.5px;
+}
+
+
+.contact-people a b {
+color: #3b9fff;
+
+font-weight: 400;
+}
+
+
+/* ========================================
+FOOTER
+======================================== */
+
+.site-footer {
+max-width: 1440px;
+
+margin: auto;
+padding: 50px 5% 30px;
+
+display: grid;
+
+grid-template-columns: 1.1fr 1.6fr 1fr;
+
+gap: 60px;
+}
+
+
+.footer-brand {
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+}
+
+
+.footer-brand .wordmark {
+align-items: flex-start;
+
+font-size: 18px;
+}
+
+
+.footer-brand .wordmark small {
+font-size: 8px;
+}
+
+
+.footer-brand p {
+margin: 17px 0 0;
+
+color: var(--muted);
+
+font-size: 11px;
+
+letter-spacing: .4px;
+}
+
+
+.footer-company {
+display: flex;
+flex-direction: column;
+
+gap: 5px;
+
+color: var(--muted);
+
+font-size: 11px;
+
+line-height: 1.55;
+}
+
+
+.footer-company strong {
+margin-bottom: 5px;
+
+color: var(--ink);
+
+font-size: 12px;
+}
+
+
+.footer-links {
+display: flex;
+flex-direction: column;
+align-items: flex-end;
+
+gap: 10px;
+
+color: var(--muted);
+
+font-size: 12px;
+}
+
+
+.footer-bottom {
+grid-column: 1 / -1;
+
+padding-top: 25px;
+
+border-top: 1px solid var(--line);
+
+color: var(--muted);
+
+font-size: 10px;
+}
+
+
+/* ========================================
+PRIVACY PAGE
+======================================== */
+
+.privacy-header {
+max-width: 1100px;
+}
+
+
+.privacy-page {
+max-width: 900px;
+
+margin: auto;
+padding: 90px 5% 120px;
+}
+
+
+.privacy-page h1 {
+margin-bottom: 70px;
+}
+
+
+.privacy-intro {
+max-width: 720px;
+
+margin-bottom: 60px;
+
+color: var(--muted);
+
+font-size: 17px;
+
+line-height: 1.85;
+}
+
+
+.privacy-section {
+padding: 35px 0;
+
+border-top: 1px solid var(--line);
+}
+
+
+.privacy-section h2 {
+margin: 0 0 20px;
+
+font-size: 24px;
+
+letter-spacing: -1px;
+}
+
+
+.privacy-section p {
+max-width: 720px;
+
+margin: 0 0 16px;
+
+color: var(--muted);
+
+font-size: 15px;
+
+line-height: 1.9;
+}
+
+
+.privacy-section ul {
+max-width: 720px;
+
+padding-left: 20px;
+
+color: var(--muted);
+
+font-size: 15px;
+
+line-height: 1.9;
+}
+
+
+/* ========================================
+RESPONSIVE
+======================================== */
+
+@media (min-width: 1600px) {
+
+.hero {
+padding-top: 100px;
+}
+
+}
+
+
+@media (max-width: 1100px) {
+
+.hero-actions {
+align-items: flex-start;
+flex-direction: column;
+
+gap: 20px;
+}
+
+
+.application-strip {
+gap: 25px;
+}
+
+
+.hero-art {
+margin-bottom: 30px;
+}
+
+
+.hero-note {
+margin-top: 40px;
+}
+
+
+.contact {
+gap: 40px;
+}
+
+
+.contact-people a {
+font-size: 25px;
+}
+
+
+.article-visual > b {
+font-size: 25px;
+}
+
+}
+
+
+@media (max-width: 760px) {
+
+header {
+height: 88px;
+
+padding: 0 6%;
+}
+
+
+header .wordmark {
+font-size: 19px;
+}
+
+
+nav {
+display: none;
+}
+
+
+.nav-contact {
+padding: 12px;
+
+font-size: 12px;
+}
+
+
+.nav-contact span {
+margin-left: 8px;
+}
+
+
+.hero {
+padding: 45px 6% 0;
+
+grid-template-columns: 1fr;
+
+gap: 0;
+}
+
+
+.eyebrow {
+font-size: 9px;
+
+letter-spacing: 1.25px;
+}
+
+
+h1 {
+margin: 23px 0;
+
+font-size: 58px;
+
+letter-spacing: -3.5px;
+}
+
+
+.hero-copy > p {
+font-size: 16px;
+}
+
+
+.hero-actions {
+gap: 22px;
+}
+
+
+.button {
+padding: 18px 20px;
+
+font-size: 13px;
+}
+
+
+.hero-note {
+margin-top: 32px;
+
+gap: 18px;
+
+font-size: 10px;
+}
+
+
+.hero-art {
+min-height: 330px;
+
+margin-bottom: 25px;
+}
+
+
+.hero-art img {
+max-width: 500px;
+
+align-self: center;
+}
+
+
+.art-top,
+.art-bottom {
+left: 18px;
+right: 18px;
+
+font-size: 8px;
+}
+
+
+.application-strip {
+padding: 23px 6%;
+
+flex-wrap: wrap;
+
+gap: 15px;
+
+font-size: 12px;
+}
+
+
+.application-strip > span:first-child {
+width: 100%;
+
+margin-bottom: 5px;
+
+text-align: center;
+
+font-size: 9px;
+}
+
+
+.section {
+padding: 65px 6%;
+}
+
+
+.section-heading {
+display: block;
+
+margin-bottom: 35px;
+}
+
+
+h2 {
+font-size: 35px;
+
+letter-spacing: -1.6px;
+}
+
+
+.section-heading > p {
+max-width: none;
+
+margin-top: 23px;
+
+font-size: 15px;
+}
+
+
+.about-description {
+max-width: none;
+
+margin-top: 25px;
+}
+
+
+.about-grid {
+grid-template-columns: 1fr;
+}
+
+
+.about-item {
+padding: 30px 0;
+}
+
+
+.about-item + .about-item {
+padding-left: 0;
+
+border-left: 0;
+border-top: 1px solid var(--line);
+}
+
+
+.process {
+grid-template-columns: 1fr;
+
+gap: 35px;
+}
+
+
+.steps p {
+font-size: 16px;
+}
+
+
+.articles {
+grid-template-columns: 1fr;
+
+gap: 32px;
+}
+
+
+.article-visual {
+height: 240px;
+}
+
+
+.article-visual > b {
+font-size: 33px;
+}
+
+
+.article-body h3 {
+font-size: 23px;
+}
+
+
+.article-body p,
+.article-expanded {
+font-size: 16px;
+}
+
+
+.read {
+font-size: 14px;
+}
+
+
+.contact {
+padding: 60px 6%;
+
+grid-template-columns: 1fr;
+
+gap: 20px;
+}
+
+
+.contact h2 {
+font-size: 48px;
+}
+
+
+.contact-people a {
+font-size: 26px;
+}
+
+
+.contact p {
+font-size: 16px;
+}
+
+
+.contact-people p {
+font-size: 14px;
+}
+
+
+.site-footer {
+padding: 40px 6% 25px;
+
+grid-template-columns: 1fr;
+
+gap: 30px;
+}
+
+
+.footer-links {
+align-items: flex-start;
+}
+
+
+.footer-bottom {
+grid-column: auto;
+}
+
+
+.privacy-page {
+padding: 60px 6% 80px;
+}
+
+
+.privacy-page h1 {
+margin-bottom: 45px;
+
+font-size: 50px;
+}
+
+
+.privacy-section h2 {
+font-size: 21px;
+}
+
+
+.privacy-section p,
+.privacy-section ul {
+font-size: 15px;
+}
+
+
+.desktop {
+display: none;
+}
+
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+
+html {
+scroll-behavior: auto;
+}
+
+
+* {
+transition: none !important;
+}
+
+}

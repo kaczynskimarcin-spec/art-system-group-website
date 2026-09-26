@@ -1,0 +1,21 @@
+const articles = document.querySelectorAll('.articles details');
+
+articles.forEach(article => {
+
+article.addEventListener('toggle', () => {
+
+if (!article.open) {
+return;
+}
+
+articles.forEach(otherArticle => {
+
+if (otherArticle !== article) {
+otherArticle.open = false;
+}
+
+});
+
+});
+
+});
