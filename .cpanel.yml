@@ -7,3 +7,4 @@ deployment:
     - /bin/cp script.js $DEPLOYPATH
     - /bin/mkdir -p $DEPLOYPATH/assets
     - /bin/cp -R assets/. $DEPLOYPATH/assets/
+    - /bin/cp sitemap.xml $DEPLOYPATH
