@@ -1,3 +1,22 @@
+/* latin-ext */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url(assets/fonts/manrope-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url(assets/fonts/manrope-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 /* ==========================================================
    ART SYSTEM GROUP
    REDESIGN
@@ -386,7 +405,7 @@ img {
     transform: scale(1.03);
 
     animation:
-            heroBgFloat 10s ease-in-out infinite;
+            heroBgFloat 10s ease-in-out .45 forwards;
 }
 
 
@@ -517,55 +536,6 @@ img {
 }
 
 
-/* HERO INDEX */
-
-.hero-index {
-    width: 260px;
-
-    margin-top: 40px;
-
-    display: flex;
-    justify-content: space-between;
-
-    color:
-            rgba(255, 255, 255, .4);
-
-    font-size: 10px;
-}
-
-.hero-index span {
-    position: relative;
-
-    width: 45px;
-
-    padding-bottom: 12px;
-}
-
-.hero-index span::after {
-    content: "";
-
-    position: absolute;
-
-    bottom: 0;
-    left: 0;
-
-    width: 100%;
-    height: 1px;
-
-    background:
-            rgba(255, 255, 255, .2);
-}
-
-.hero-index .active {
-    color: white;
-}
-
-.hero-index .active::after {
-    height: 2px;
-
-    background: var(--blue);
-}
-
 
 /* ==========================================================
    HERO ORBITS
@@ -612,7 +582,7 @@ img {
             inset 0 0 30px rgba(0, 170, 255, .08);
 
     animation:
-            orbitSpin 18s linear infinite;
+            orbitSpin 18s linear .25 forwards;
 }
 
 .orbit-1::before,
@@ -664,7 +634,7 @@ img {
             rgba(120, 220, 255, .28);
 
     animation:
-            orbitSpinReverse 28s linear infinite;
+            orbitSpinReverse 28s linear .16 forwards;
 }
 
 .orbit-2::before {
@@ -694,7 +664,7 @@ img {
             blur(.2px);
 
     animation:
-            orbitSpin 40s linear infinite;
+            orbitSpin 40s linear .1125 forwards;
 }
 
 .orbit-3::after {
@@ -776,11 +746,13 @@ img {
             );
 
     animation:
-            orbitSpinReverse 22s linear infinite;
+            orbitSpinReverse 22s linear .2 forwards;
 }
 
 
-/* HERO ANIMATIONS */
+/* HERO ANIMATIONS
+   WCAG 2.2.2: finite fractional iterations keep the original speed and stop
+   within 4.5 seconds. The forwards fill retains the final decorative frame. */
 
 @keyframes heroBgFloat {
 
@@ -828,88 +800,6 @@ img {
                 translate(-50%, -50%)
                 rotate(0deg);
     }
-}
-
-
-/* ==========================================================
-   HERO HUD
-========================================================== */
-
-.system-status {
-    position: absolute;
-
-    z-index: 5;
-
-    top: 190px;
-    right: 6%;
-
-    width: 230px;
-
-    padding: 22px;
-
-    border:
-            1px solid rgba(255, 255, 255, .22);
-
-    background:
-            rgba(4, 18, 31, .68);
-
-    backdrop-filter: blur(12px);
-
-    box-shadow:
-            0 20px 50px rgba(0, 0, 0, .25);
-}
-
-.status-header {
-    margin-bottom: 18px;
-
-    display: flex;
-    justify-content: space-between;
-
-    font-size: 9px;
-    font-weight: 800;
-
-    letter-spacing: 1.4px;
-}
-
-.status-header small {
-    color:
-            rgba(255, 255, 255, .45);
-}
-
-.status-row {
-    padding: 7px 0;
-
-    display: flex;
-    justify-content: space-between;
-
-    font-size: 10px;
-}
-
-.status-row > span {
-    font-weight: 700;
-}
-
-.status-row div {
-    display: flex;
-    align-items: center;
-
-    gap: 7px;
-
-    color:
-            rgba(255, 255, 255, .75);
-}
-
-.status-row i {
-    width: 6px;
-    height: 6px;
-
-    border-radius: 50%;
-
-    background:
-            var(--green);
-
-    box-shadow:
-            0 0 10px rgba(37, 209, 138, .8);
 }
 
 
@@ -1208,7 +1098,6 @@ img {
 
 .technology-cctv {
     background-image:
-            url("assets/system-cctv.jpg"),
             linear-gradient(
                     135deg,
                     #132c40,
@@ -1221,7 +1110,6 @@ img {
 
 .technology-sswin {
     background-image:
-            url("assets/system-sswin.jpg"),
             linear-gradient(
                     135deg,
                     #17324a,
@@ -1231,7 +1119,6 @@ img {
 
 .technology-lan {
     background-image:
-            url("assets/system-lan.jpg"),
             linear-gradient(
                     135deg,
                     #07518d,
@@ -1241,7 +1128,6 @@ img {
 
 .technology-electric {
     background-image:
-            url("assets/system-electric.jpg"),
             linear-gradient(
                     135deg,
                     #293742,
@@ -1262,22 +1148,10 @@ img {
             );
 }
 
-.technology-number,
 .technology-content {
     position: relative;
-
     z-index: 2;
-}
-
-.technology-number {
     margin-top: auto;
-
-    font-size: 10px;
-    font-weight: 700;
-}
-
-.technology-content {
-    margin-top: 15px;
 }
 
 .technology-content h3 {
@@ -1358,32 +1232,6 @@ img {
     letter-spacing: -1.6px;
 }
 
-.project-arrows {
-    margin-top: 45px;
-
-    display: flex;
-
-    gap: 12px;
-}
-
-.project-arrows button {
-    width: 42px;
-    height: 42px;
-
-    border:
-            1px solid rgba(255, 255, 255, .25);
-
-    border-radius: 50%;
-
-    color: white;
-
-    background:
-            transparent;
-
-    cursor: pointer;
-}
-
-
 /* PROJECT */
 
 .project {
@@ -1412,7 +1260,6 @@ img {
 
 .project-dpd {
     background-image:
-            url("assets/project-realizacja-1.png"),
             linear-gradient(
                     135deg,
                     #17324a,
@@ -1425,7 +1272,6 @@ img {
 
 .project-raben {
     background-image:
-            url("assets/project-raben.jpg"),
             linear-gradient(
                     135deg,
                     #30495d,
@@ -1692,8 +1538,6 @@ img {
                     rgba(6, 21, 35, .93) 48%,
                     rgba(6, 21, 35, .35) 100%
             ),
-            url("assets/contact-camera.jpg")
-            right center / cover no-repeat,
             #071522;
 }
 
@@ -1915,11 +1759,6 @@ img {
     .desktop-nav {
         gap: 20px;
     }
-
-    .system-status {
-        right: 4%;
-    }
-
 
     /* HERO ORBITS */
 
@@ -2156,16 +1995,7 @@ img {
     }
 
 
-    /* OLD HUD */
-
-    .system-status {
-        display: none;
-    }
-
-    .hero-index {
-        display: none;
-    }
-
+    /* MINI STATS */
     .hero-mini-stats {
         z-index: 6;
 
@@ -2240,7 +2070,7 @@ img {
         display: grid;
 
         grid-template-columns:
-        1.05fr repeat(4, 1fr);
+        repeat(2, minmax(0, 1fr));
 
         gap: 12px;
     }
@@ -2284,10 +2114,6 @@ img {
 
     .projects-intro {
         margin-bottom: 35px;
-    }
-
-    .project-arrows {
-        display: none;
     }
 
     .project {
@@ -2516,4 +2342,292 @@ img {
         animation: none !important;
     }
 
+}
+
+/* Accessibility and responsive corrections */
+[hidden] {
+    display: none !important;
+}
+
+:focus-visible {
+    outline: 3px solid #0065c2;
+    outline-offset: 5px;
+}
+
+.site-header :focus-visible,
+.mobile-menu :focus-visible,
+.hero :focus-visible,
+.projects :focus-visible,
+.contact :focus-visible,
+.site-footer :focus-visible {
+    outline-color: #8fd3ff;
+}
+
+.skip-link {
+    position: fixed;
+    z-index: 1100;
+    top: 12px;
+    left: 12px;
+    padding: 12px 18px;
+    color: #fff;
+    background: #071522;
+    transform: translateY(-150%);
+}
+
+.skip-link:focus {
+    transform: none;
+}
+
+.no-script-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    padding: 110px 6% 20px;
+}
+
+.mobile-menu {
+    overflow-y: auto;
+    overscroll-behavior: contain;
+}
+
+.mobile-menu-button,
+.back-top {
+    min-width: 44px;
+    min-height: 44px;
+}
+
+.header-contact,
+.button-primary {
+    background: #006ccc;
+}
+
+.inline-link {
+    color: #0065c2;
+}
+
+.contact-row {
+    min-height: 44px;
+    font-size: 14px;
+    overflow-wrap: anywhere;
+}
+
+.person span {
+    color: rgba(255, 255, 255, .75);
+    font-size: 12px;
+}
+
+.site-footer nav a,
+.footer-copy,
+.company-details {
+    font-size: 12px;
+    color: rgba(255, 255, 255, .75);
+}
+
+.site-footer a {
+    padding-block: 6px;
+}
+
+.footer-copy a {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.company-details {
+    grid-column: 1 / -1;
+    width: 100%;
+    margin: 0;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255, 255, 255, .15);
+}
+
+.technology-card,
+.project,
+.process-step,
+.contact-card {
+    transition: opacity .6s ease, transform .6s ease;
+}
+
+.reveal-pending {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.reveal-pending:focus-within {
+    opacity: 1;
+    transform: none;
+}
+
+.technology-image,
+.project-photo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.technology-cctv .technology-image {
+    object-position: 80% center;
+}
+
+.project-dpd .project-photo {
+    object-position: center 15%;
+}
+
+.technology-gradient,
+.project-photo-label {
+    z-index: 1;
+}
+
+.privacy-header {
+    max-width: var(--max-width);
+    margin: auto;
+    padding: 24px 6%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    color: #fff;
+    background: var(--navy);
+}
+
+.privacy-body .wordmark {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 18px;
+}
+
+.privacy-body .wordmark small {
+    font-size: 11px;
+    letter-spacing: .35em;
+}
+
+.privacy-body .nav-contact {
+    padding-block: 12px;
+}
+
+.privacy-page {
+    max-width: 860px;
+    margin: auto;
+    padding: 56px 24px;
+    line-height: 1.75;
+    overflow-wrap: anywhere;
+}
+
+.privacy-page h1 {
+    font-size: clamp(32px, 6vw, 52px);
+    line-height: 1.1;
+    letter-spacing: -1px;
+}
+
+.privacy-page h1 em {
+    font-style: normal;
+    color: #0065c2;
+}
+
+.privacy-page .eyebrow {
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.privacy-section {
+    margin-top: 36px;
+}
+
+.privacy-section h2 {
+    font-size: 22px;
+    line-height: 1.35;
+}
+
+.privacy-body .site-footer {
+    grid-template-columns: 1fr 1.5fr 1fr;
+    align-items: start;
+}
+
+.privacy-body .footer-brand p,
+.privacy-body .footer-company,
+.privacy-body .footer-links,
+.privacy-body .footer-bottom {
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.privacy-body .footer-company,
+.privacy-body .footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.privacy-body .footer-bottom {
+    grid-column: 1 / -1;
+}
+
+@media (max-width: 1150px) {
+    .site-footer {
+        grid-template-columns: 1fr auto;
+        gap: 24px;
+    }
+
+    .site-footer nav {
+        flex-wrap: wrap;
+        gap: 12px 20px;
+    }
+
+    .footer-copy {
+        justify-self: start;
+    }
+
+    .back-top {
+        justify-self: end;
+    }
+}
+
+@media (max-width: 760px) {
+    .technology-card {
+        min-width: 0;
+        padding: 20px;
+    }
+
+    .technology-content p {
+        font-size: 13px;
+        padding-right: 0;
+    }
+
+    .technology-content h3 {
+        font-size: 25px;
+    }
+
+    .process-intro {
+        min-width: 0;
+    }
+
+    .site-footer {
+        gap: 24px;
+    }
+}
+
+@media (max-width: 430px) {
+    .technologies {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .technology-card {
+        min-height: 320px;
+    }
+
+    .hero h1 {
+        font-size: clamp(36px, 11.8vw, 48px);
+        letter-spacing: -2px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal-pending {
+        opacity: 1;
+        transform: none;
+    }
 }

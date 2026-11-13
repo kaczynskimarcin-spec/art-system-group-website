@@ -1,0 +1,62 @@
+# Review and merge with the existing public_html/.htaccess on staging first.
+# This example is deliberately NOT deployed by .cpanel.yml.
+# Requires Apache 2.4 and the corresponding AllowOverride permissions.
+
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Keep ACME challenges reachable; deny other hidden paths and source tooling.
+    RewriteRule (^|/)\.(?!well-known(?:/|$)) - [F,L]
+    RewriteRule ^(?:audit|deployment|node_modules)(?:/|$) - [F,L,NC]
+
+    # Enable only after HTTPS, www TLS and the hosting proxy setup are verified.
+    # These rules assume Apache terminates TLS directly. A trusted reverse proxy
+    # needs a hosting-specific HTTPS condition to avoid a redirect loop.
+    # RewriteCond %{HTTPS} !=on [OR]
+    # RewriteCond %{HTTP_HOST} !^artsystem-group\.pl$ [NC]
+    # RewriteRule ^ https://artsystem-group.pl%{REQUEST_URI} [R=301,L,NE]
+
+    # Redirect explicit /index.html only, preserving fragments in the browser.
+    # RewriteCond %{THE_REQUEST} \s/+index\.html(?:[?\s]) [NC]
+    # RewriteRule ^index\.html$ https://artsystem-group.pl/ [R=301,L]
+</IfModule>
+
+<IfModule mod_authz_core.c>
+    <FilesMatch "(?i)^(?:\.(?!well-known).*|.*\.(?:env|ini|log|sql|bak|old|orig|key|pem|p12|pfx)|AGENTS\.md|package(?:-lock)?\.json)$">
+        Require all denied
+    </FilesMatch>
+</IfModule>
+
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set X-Frame-Options "DENY"
+    Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+
+    # Observe violations on staging before switching to Content-Security-Policy.
+    # No reporting endpoint is configured; violations appear in DevTools.
+    Header always set Content-Security-Policy-Report-Only "default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'; form-action 'none'"
+
+    # Enable HSTS on HTTPS only, after a successful HTTPS rollout.
+    # Start with a short duration; do not add includeSubDomains or preload
+    # before separately auditing all subdomains.
+    # Header always set Strict-Transport-Security "max-age=86400" "expr=%{HTTPS} == 'on'"
+
+    <FilesMatch "\.(?:html|xml|txt)$">
+        Header set Cache-Control "no-cache"
+    </FilesMatch>
+    <FilesMatch "\.(?:css|js|woff2|png|jpe?g|webp|avif)$">
+        Header set Cache-Control "public, max-age=604800"
+    </FilesMatch>
+</IfModule>
+
+<IfModule mod_mime.c>
+    AddType image/webp .webp
+    AddType font/woff2 .woff2
+</IfModule>
+
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/css text/javascript application/javascript application/xml image/svg+xml
+</IfModule>

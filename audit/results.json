@@ -1,0 +1,1311 @@
+{
+  "date": "2026-11-13",
+  "baseCommit": "3b905b4",
+  "branch": "audit/seo-security-optimization",
+  "environment": "Local PowerShell HTTP preview, cold navigation, Lighthouse simulated throttling, dedicated Chrome headless profile; not production CWV; fixture uses Cache-Control: no-store",
+  "lighthouse": [
+    {
+      "scenario": "before-mobile",
+      "version": "13.6.0",
+      "date": "2026-11-13T21:30:10.380Z",
+      "url": "http://127.0.0.1:8123/before/index.html",
+      "scores": {
+        "performance": 75,
+        "accessibility": 95,
+        "best-practices": 96,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 1558.0387381530024,
+        "largest-contentful-paint": 37172.37758558991,
+        "total-blocking-time": 19.638899999999694,
+        "cumulative-layout-shift": 0.003093619287307094,
+        "total-byte-weight": 15152744
+      },
+      "settings": {
+        "output": [
+          "json",
+          "html"
+        ],
+        "maxWaitForFcp": 30000,
+        "maxWaitForLoad": 45000,
+        "pauseAfterFcpMs": 1000,
+        "pauseAfterLoadMs": 1000,
+        "networkQuietThresholdMs": 1000,
+        "cpuQuietThresholdMs": 1000,
+        "formFactor": "mobile",
+        "throttling": {
+          "rttMs": 150,
+          "throughputKbps": 1638.4,
+          "requestLatencyMs": 562.5,
+          "downloadThroughputKbps": 1474.5600000000002,
+          "uploadThroughputKbps": 675,
+          "cpuSlowdownMultiplier": 4
+        },
+        "throttlingMethod": "simulate",
+        "screenEmulation": {
+          "mobile": true,
+          "width": 412,
+          "height": 823,
+          "deviceScaleFactor": 1.75,
+          "disabled": false
+        },
+        "emulatedUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+        "auditMode": false,
+        "gatherMode": false,
+        "clearStorageTypes": [
+          "file_systems",
+          "shader_cache",
+          "service_workers",
+          "cache_storage"
+        ],
+        "disableStorageReset": false,
+        "debugNavigation": false,
+        "channel": "cli",
+        "usePassiveGathering": false,
+        "disableFullPageScreenshot": false,
+        "skipAboutBlank": false,
+        "blankPage": "about:blank",
+        "ignoreStatusCode": false,
+        "locale": "en-US",
+        "blockedUrlPatterns": null,
+        "additionalTraceCategories": null,
+        "extraHeaders": null,
+        "precomputedLanternData": null,
+        "onlyAudits": null,
+        "onlyCategories": [
+          "performance",
+          "accessibility",
+          "best-practices",
+          "seo"
+        ],
+        "skipAudits": null
+      },
+      "warnings": [],
+      "failedBinaryAudits": [
+        {
+          "id": "errors-in-console",
+          "title": "Browser errors were logged to the console"
+        },
+        {
+          "id": "color-contrast",
+          "title": "Background and foreground colors do not have a sufficient contrast ratio."
+        },
+        {
+          "id": "bf-cache",
+          "title": "Page prevented back/forward cache restoration"
+        }
+      ]
+    },
+    {
+      "scenario": "after-mobile",
+      "version": "13.6.0",
+      "date": "2026-11-13T21:53:55.683Z",
+      "url": "http://127.0.0.1:8123/",
+      "scores": {
+        "performance": 95,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 1079.389906693848,
+        "largest-contentful-paint": 2886.7373833673096,
+        "total-blocking-time": 97.30504665307603,
+        "cumulative-layout-shift": 0,
+        "total-byte-weight": 725483
+      },
+      "settings": {
+        "output": [
+          "json",
+          "html"
+        ],
+        "maxWaitForFcp": 30000,
+        "maxWaitForLoad": 45000,
+        "pauseAfterFcpMs": 1000,
+        "pauseAfterLoadMs": 1000,
+        "networkQuietThresholdMs": 1000,
+        "cpuQuietThresholdMs": 1000,
+        "formFactor": "mobile",
+        "throttling": {
+          "rttMs": 150,
+          "throughputKbps": 1638.4,
+          "requestLatencyMs": 562.5,
+          "downloadThroughputKbps": 1474.5600000000002,
+          "uploadThroughputKbps": 675,
+          "cpuSlowdownMultiplier": 4
+        },
+        "throttlingMethod": "simulate",
+        "screenEmulation": {
+          "mobile": true,
+          "width": 412,
+          "height": 823,
+          "deviceScaleFactor": 1.75,
+          "disabled": false
+        },
+        "emulatedUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+        "auditMode": false,
+        "gatherMode": false,
+        "clearStorageTypes": [
+          "file_systems",
+          "shader_cache",
+          "service_workers",
+          "cache_storage"
+        ],
+        "disableStorageReset": false,
+        "debugNavigation": false,
+        "channel": "cli",
+        "usePassiveGathering": false,
+        "disableFullPageScreenshot": false,
+        "skipAboutBlank": false,
+        "blankPage": "about:blank",
+        "ignoreStatusCode": false,
+        "locale": "en-US",
+        "blockedUrlPatterns": null,
+        "additionalTraceCategories": null,
+        "extraHeaders": null,
+        "precomputedLanternData": null,
+        "onlyAudits": null,
+        "onlyCategories": [
+          "performance",
+          "accessibility",
+          "best-practices",
+          "seo"
+        ],
+        "skipAudits": null
+      },
+      "warnings": [],
+      "failedBinaryAudits": [
+        {
+          "id": "bf-cache",
+          "title": "Page prevented back/forward cache restoration"
+        }
+      ]
+    },
+    {
+      "scenario": "before-desktop",
+      "version": "13.6.0",
+      "date": "2026-11-13T21:41:13.567Z",
+      "url": "http://127.0.0.1:8123/before/index.html",
+      "scores": {
+        "performance": 75,
+        "accessibility": 95,
+        "best-practices": 96,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 610.521430940015,
+        "largest-contentful-paint": 10429.544823205011,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0.0009463084484103214,
+        "total-byte-weight": 15153508
+      },
+      "settings": {
+        "output": [
+          "json",
+          "html"
+        ],
+        "maxWaitForFcp": 30000,
+        "maxWaitForLoad": 45000,
+        "pauseAfterFcpMs": 1000,
+        "pauseAfterLoadMs": 1000,
+        "networkQuietThresholdMs": 1000,
+        "cpuQuietThresholdMs": 1000,
+        "formFactor": "desktop",
+        "throttling": {
+          "rttMs": 40,
+          "throughputKbps": 10240,
+          "requestLatencyMs": 0,
+          "downloadThroughputKbps": 0,
+          "uploadThroughputKbps": 0,
+          "cpuSlowdownMultiplier": 1
+        },
+        "throttlingMethod": "simulate",
+        "screenEmulation": {
+          "mobile": false,
+          "width": 1350,
+          "height": 940,
+          "deviceScaleFactor": 1,
+          "disabled": false
+        },
+        "emulatedUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+        "auditMode": false,
+        "gatherMode": false,
+        "clearStorageTypes": [
+          "file_systems",
+          "shader_cache",
+          "service_workers",
+          "cache_storage"
+        ],
+        "disableStorageReset": false,
+        "debugNavigation": false,
+        "channel": "cli",
+        "usePassiveGathering": false,
+        "disableFullPageScreenshot": false,
+        "skipAboutBlank": false,
+        "blankPage": "about:blank",
+        "ignoreStatusCode": false,
+        "locale": "en-US",
+        "blockedUrlPatterns": null,
+        "additionalTraceCategories": null,
+        "extraHeaders": null,
+        "precomputedLanternData": null,
+        "onlyAudits": null,
+        "onlyCategories": [
+          "performance",
+          "accessibility",
+          "best-practices",
+          "seo"
+        ],
+        "skipAudits": null
+      },
+      "warnings": [],
+      "failedBinaryAudits": [
+        {
+          "id": "errors-in-console",
+          "title": "Browser errors were logged to the console"
+        },
+        {
+          "id": "color-contrast",
+          "title": "Background and foreground colors do not have a sufficient contrast ratio."
+        },
+        {
+          "id": "bf-cache",
+          "title": "Page prevented back/forward cache restoration"
+        }
+      ]
+    },
+    {
+      "scenario": "after-desktop",
+      "version": "13.6.0",
+      "date": "2026-11-13T21:55:15.281Z",
+      "url": "http://127.0.0.1:8123/",
+      "scores": {
+        "performance": 99,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 323.76195,
+        "largest-contentful-paint": 973.5239000000001,
+        "total-blocking-time": 21,
+        "cumulative-layout-shift": 0,
+        "total-byte-weight": 1000369
+      },
+      "settings": {
+        "output": [
+          "json",
+          "html"
+        ],
+        "maxWaitForFcp": 30000,
+        "maxWaitForLoad": 45000,
+        "pauseAfterFcpMs": 1000,
+        "pauseAfterLoadMs": 1000,
+        "networkQuietThresholdMs": 1000,
+        "cpuQuietThresholdMs": 1000,
+        "formFactor": "desktop",
+        "throttling": {
+          "rttMs": 40,
+          "throughputKbps": 10240,
+          "requestLatencyMs": 0,
+          "downloadThroughputKbps": 0,
+          "uploadThroughputKbps": 0,
+          "cpuSlowdownMultiplier": 1
+        },
+        "throttlingMethod": "simulate",
+        "screenEmulation": {
+          "mobile": false,
+          "width": 1350,
+          "height": 940,
+          "deviceScaleFactor": 1,
+          "disabled": false
+        },
+        "emulatedUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+        "auditMode": false,
+        "gatherMode": false,
+        "clearStorageTypes": [
+          "file_systems",
+          "shader_cache",
+          "service_workers",
+          "cache_storage"
+        ],
+        "disableStorageReset": false,
+        "debugNavigation": false,
+        "channel": "cli",
+        "usePassiveGathering": false,
+        "disableFullPageScreenshot": false,
+        "skipAboutBlank": false,
+        "blankPage": "about:blank",
+        "ignoreStatusCode": false,
+        "locale": "en-US",
+        "blockedUrlPatterns": null,
+        "additionalTraceCategories": null,
+        "extraHeaders": null,
+        "precomputedLanternData": null,
+        "onlyAudits": null,
+        "onlyCategories": [
+          "performance",
+          "accessibility",
+          "best-practices",
+          "seo"
+        ],
+        "skipAudits": null
+      },
+      "warnings": [],
+      "failedBinaryAudits": [
+        {
+          "id": "bf-cache",
+          "title": "Page prevented back/forward cache restoration"
+        }
+      ]
+    }
+  ],
+  "browser": {
+    "pages": 14,
+    "checks": 262,
+    "failures": [],
+    "sizes": [
+      {
+        "url": "http://127.0.0.1:8123/",
+        "width": 320,
+        "checks": 21
+      },
+      {
+        "url": "http://127.0.0.1:8123/",
+        "width": 360,
+        "checks": 21
+      },
+      {
+        "url": "http://127.0.0.1:8123/",
+        "width": 390,
+        "checks": 21
+      },
+      {
+        "url": "http://127.0.0.1:8123/",
+        "width": 430,
+        "checks": 21
+      },
+      {
+        "url": "http://127.0.0.1:8123/",
+        "width": 600,
+        "checks": 21
+      },
+      {
+        "url": "http://127.0.0.1:8123/",
+        "width": 760,
+        "checks": 21
+      },
+      {
+        "url": "http://127.0.0.1:8123/",
+        "width": 768,
+        "checks": 21
+      },
+      {
+        "url": "http://127.0.0.1:8123/",
+        "width": 1024,
+        "checks": 21
+      },
+      {
+        "url": "http://127.0.0.1:8123/",
+        "width": 1440,
+        "checks": 21
+      },
+      {
+        "url": "http://127.0.0.1:8123/",
+        "width": 1920,
+        "checks": 21
+      },
+      {
+        "url": "http://127.0.0.1:8123/privacy.html",
+        "width": 320,
+        "checks": 13
+      },
+      {
+        "url": "http://127.0.0.1:8123/privacy.html",
+        "width": 390,
+        "checks": 13
+      },
+      {
+        "url": "http://127.0.0.1:8123/privacy.html",
+        "width": 768,
+        "checks": 13
+      },
+      {
+        "url": "http://127.0.0.1:8123/privacy.html",
+        "width": 1440,
+        "checks": 13
+      }
+    ]
+  },
+  "interactions": [
+    {
+      "name": "Menu initially hidden",
+      "passed": true
+    },
+    {
+      "name": "Enter opens menu and focuses first link",
+      "passed": true
+    },
+    {
+      "name": "Shift Tab moves to toggle",
+      "passed": true
+    },
+    {
+      "name": "Tab wraps to last menu link",
+      "passed": true
+    },
+    {
+      "name": "Escape closes menu and restores focus",
+      "passed": true
+    },
+    {
+      "name": "Menu contact link updates hash and closes menu",
+      "passed": true
+    },
+    {
+      "name": "Back restores fragment history",
+      "passed": true
+    },
+    {
+      "name": "Desktop breakpoint closes menu and unlocks page",
+      "passed": true
+    },
+    {
+      "name": "Pause control pauses decorative animations",
+      "passed": true
+    },
+    {
+      "name": "No cookies or browser storage created",
+      "passed": true
+    },
+    {
+      "name": "Reduced motion disables animations and smooth scrolling",
+      "passed": true
+    },
+    {
+      "name": "Reduced motion hides redundant pause control",
+      "passed": true
+    },
+    {
+      "name": "Without JS, navigation and content remain accessible",
+      "passed": true
+    },
+    {
+      "name": "Landscape menu scrolls",
+      "passed": true
+    },
+    {
+      "name": "Privacy contact link reaches actual section",
+      "passed": true
+    },
+    {
+      "name": "CSP allows site functionality",
+      "passed": true
+    }
+  ],
+  "axe": [
+    {
+      "url": "http://127.0.0.1:8123/",
+      "width": 390,
+      "version": "4.14.0",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": [
+            [
+              "header > .brand[href$=\"#top\"] > .brand-name > strong"
+            ],
+            [
+              "header > .brand[href$=\"#top\"] > .brand-name > small"
+            ],
+            [
+              ".hero-eyebrow"
+            ],
+            [
+              "h1"
+            ],
+            [
+              "h1 > span"
+            ],
+            [
+              ".hero-description"
+            ],
+            [
+              ".button-primary[href$=\"#contact\"]"
+            ],
+            [
+              ".button-secondary"
+            ],
+            [
+              ".button-secondary > span"
+            ],
+            [
+              ".motion-toggle"
+            ],
+            [
+              "div:nth-child(1) > strong"
+            ],
+            [
+              ".hero-mini-stats > div:nth-child(1) > span"
+            ],
+            [
+              ".hero-mini-stats > div:nth-child(2) > strong"
+            ],
+            [
+              ".hero-mini-stats > div:nth-child(2) > span"
+            ],
+            [
+              ".experience-map > span"
+            ],
+            [
+              ".technology-cctv > .technology-content > h3"
+            ],
+            [
+              ".technology-cctv > .technology-content > p"
+            ],
+            [
+              ".technology-sswin > .technology-content > h3"
+            ],
+            [
+              ".technology-sswin > .technology-content > p"
+            ],
+            [
+              ".technology-lan > .technology-content > h3"
+            ],
+            [
+              ".technology-lan > .technology-content > p"
+            ],
+            [
+              ".technology-electric > .technology-content > h3"
+            ],
+            [
+              ".technology-electric > .technology-content > p"
+            ],
+            [
+              ".technology-content > span"
+            ],
+            [
+              ".projects-intro > .light.section-label"
+            ],
+            [
+              ".projects-intro > h2"
+            ],
+            [
+              ".project-dpd > .project-photo-label"
+            ],
+            [
+              ".project:nth-child(2) > .project-info > .project-type"
+            ],
+            [
+              ".project:nth-child(2) > .project-info > h3"
+            ],
+            [
+              ".project:nth-child(2) > .project-info > p"
+            ],
+            [
+              ".project:nth-child(2) > .project-info > ul > li:nth-child(1)"
+            ],
+            [
+              ".project:nth-child(2) > .project-info > ul > li:nth-child(2)"
+            ],
+            [
+              ".project:nth-child(2) > .project-info > ul > li:nth-child(3)"
+            ],
+            [
+              ".project:nth-child(2) > .project-info > ul > li:nth-child(4)"
+            ],
+            [
+              ".project:nth-child(2) > .project-info > a[href$=\"#contact\"]"
+            ],
+            [
+              ".project-raben > .project-photo-label"
+            ],
+            [
+              ".project:nth-child(3) > .project-info > .project-type"
+            ],
+            [
+              ".project:nth-child(3) > .project-info > h3"
+            ],
+            [
+              ".project:nth-child(3) > .project-info > p"
+            ],
+            [
+              ".project:nth-child(3) > .project-info > ul > li:nth-child(1)"
+            ],
+            [
+              ".project:nth-child(3) > .project-info > ul > li:nth-child(2)"
+            ],
+            [
+              ".project:nth-child(3) > .project-info > ul > li:nth-child(3)"
+            ],
+            [
+              ".project:nth-child(3) > .project-info > ul > li:nth-child(4)"
+            ],
+            [
+              ".project:nth-child(3) > .project-info > a[href$=\"#contact\"]"
+            ],
+            [
+              ".contact-intro > .light.section-label"
+            ],
+            [
+              ".contact-intro > h2"
+            ],
+            [
+              "h2 > span"
+            ],
+            [
+              ".contact-intro > p:nth-child(3)"
+            ],
+            [
+              ".contact-card:nth-child(1) > .person > .person-icon"
+            ],
+            [
+              ".contact-card:nth-child(1) > .person > div:nth-child(2) > h3"
+            ],
+            [
+              ".contact-card:nth-child(1) > .person > div:nth-child(2) > span"
+            ],
+            [
+              "a[href=\"tel:+48506711071\"]"
+            ],
+            [
+              ".contact-card:nth-child(1) > .mail.contact-row"
+            ],
+            [
+              ".contact-card:nth-child(2) > .person > .person-icon"
+            ],
+            [
+              ".contact-card:nth-child(2) > .person > div:nth-child(2) > h3"
+            ],
+            [
+              ".contact-card:nth-child(2) > .person > div:nth-child(2) > span"
+            ],
+            [
+              "a[href=\"tel:+48515408386\"]"
+            ],
+            [
+              ".contact-card:nth-child(2) > .mail.contact-row"
+            ],
+            [
+              ".back-top"
+            ]
+          ]
+        },
+        {
+          "id": "label-content-name-mismatch",
+          "nodes": [
+            [
+              ".back-top"
+            ]
+          ]
+        }
+      ],
+      "passes": 39
+    },
+    {
+      "url": "http://127.0.0.1:8123/",
+      "width": 1440,
+      "version": "4.14.0",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": [
+            [
+              "header > .brand[href$=\"#top\"] > .brand-name > strong"
+            ],
+            [
+              "header > .brand[href$=\"#top\"] > .brand-name > small"
+            ],
+            [
+              ".desktop-nav > a[href$=\"#about\"]"
+            ],
+            [
+              ".desktop-nav > a[href$=\"#projects\"]"
+            ],
+            [
+              ".desktop-nav > a[href$=\"#technologies\"]"
+            ],
+            [
+              ".desktop-nav > a[href$=\"#process\"]"
+            ],
+            [
+              ".desktop-nav > a[href$=\"#contact\"]"
+            ],
+            [
+              ".hero-eyebrow"
+            ],
+            [
+              "h1"
+            ],
+            [
+              "h1 > span"
+            ],
+            [
+              ".hero-description"
+            ],
+            [
+              ".button-secondary"
+            ],
+            [
+              ".button-secondary > span"
+            ],
+            [
+              "div:nth-child(1) > strong"
+            ],
+            [
+              ".hero-mini-stats > div:nth-child(1) > span"
+            ],
+            [
+              ".hero-mini-stats > div:nth-child(2) > strong"
+            ],
+            [
+              ".hero-mini-stats > div:nth-child(2) > span"
+            ],
+            [
+              ".experience-stat:nth-child(4) > strong"
+            ],
+            [
+              ".experience-map > span"
+            ],
+            [
+              ".technology-cctv > .technology-content > h3"
+            ],
+            [
+              ".technology-cctv > .technology-content > p"
+            ],
+            [
+              ".technology-sswin > .technology-content > h3"
+            ],
+            [
+              ".technology-sswin > .technology-content > p"
+            ],
+            [
+              ".technology-lan > .technology-content > h3"
+            ],
+            [
+              ".technology-lan > .technology-content > p"
+            ],
+            [
+              ".technology-electric > .technology-content > h3"
+            ],
+            [
+              ".technology-electric > .technology-content > p"
+            ],
+            [
+              ".technology-content > span"
+            ],
+            [
+              ".projects-intro > .light.section-label"
+            ],
+            [
+              ".projects-intro > h2"
+            ],
+            [
+              ".project-dpd > .project-photo-label"
+            ],
+            [
+              ".project:nth-child(2) > .project-info > .project-type"
+            ],
+            [
+              ".project:nth-child(2) > .project-info > h3"
+            ],
+            [
+              ".project:nth-child(2) > .project-info > p"
+            ],
+            [
+              ".project:nth-child(2) > .project-info > ul > li:nth-child(1)"
+            ],
+            [
+              ".project:nth-child(2) > .project-info > ul > li:nth-child(2)"
+            ],
+            [
+              ".project:nth-child(2) > .project-info > ul > li:nth-child(3)"
+            ],
+            [
+              ".project:nth-child(2) > .project-info > ul > li:nth-child(4)"
+            ],
+            [
+              ".project:nth-child(2) > .project-info > a[href$=\"#contact\"]"
+            ],
+            [
+              ".project-raben > .project-photo-label"
+            ],
+            [
+              ".project:nth-child(3) > .project-info > .project-type"
+            ],
+            [
+              ".project:nth-child(3) > .project-info > h3"
+            ],
+            [
+              ".project:nth-child(3) > .project-info > p"
+            ],
+            [
+              ".project:nth-child(3) > .project-info > ul > li:nth-child(1)"
+            ],
+            [
+              ".project:nth-child(3) > .project-info > ul > li:nth-child(2)"
+            ],
+            [
+              ".project:nth-child(3) > .project-info > ul > li:nth-child(3)"
+            ],
+            [
+              ".project:nth-child(3) > .project-info > ul > li:nth-child(4)"
+            ],
+            [
+              ".project:nth-child(3) > .project-info > a[href$=\"#contact\"]"
+            ],
+            [
+              ".process-arrow:nth-child(3)"
+            ],
+            [
+              ".process-arrow:nth-child(5)"
+            ],
+            [
+              ".process-arrow:nth-child(7)"
+            ],
+            [
+              ".contact-intro > .light.section-label"
+            ],
+            [
+              ".contact-intro > h2"
+            ],
+            [
+              "h2 > span"
+            ],
+            [
+              ".contact-intro > p:nth-child(3)"
+            ],
+            [
+              ".contact-card:nth-child(1) > .person > .person-icon"
+            ],
+            [
+              ".contact-card:nth-child(1) > .person > div:nth-child(2) > h3"
+            ],
+            [
+              ".contact-card:nth-child(1) > .person > div:nth-child(2) > span"
+            ],
+            [
+              "a[href=\"tel:+48506711071\"]"
+            ],
+            [
+              ".contact-card:nth-child(1) > .mail.contact-row"
+            ],
+            [
+              ".contact-card:nth-child(2) > .person > .person-icon"
+            ],
+            [
+              ".contact-card:nth-child(2) > .person > div:nth-child(2) > h3"
+            ],
+            [
+              ".contact-card:nth-child(2) > .person > div:nth-child(2) > span"
+            ],
+            [
+              "a[href=\"tel:+48515408386\"]"
+            ],
+            [
+              ".contact-card:nth-child(2) > .mail.contact-row"
+            ],
+            [
+              ".back-top"
+            ]
+          ]
+        },
+        {
+          "id": "label-content-name-mismatch",
+          "nodes": [
+            [
+              ".back-top"
+            ]
+          ]
+        }
+      ],
+      "passes": 39
+    },
+    {
+      "url": "http://127.0.0.1:8123/privacy.html",
+      "width": 390,
+      "version": "4.14.0",
+      "violations": [],
+      "incomplete": [],
+      "passes": 32
+    },
+    {
+      "url": "http://127.0.0.1:8123/privacy.html",
+      "width": 1440,
+      "version": "4.14.0",
+      "violations": [],
+      "incomplete": [],
+      "passes": 32
+    }
+  ],
+  "live": [
+    {
+      "url": "https://artsystem-group.pl/",
+      "curlExit": 0,
+      "summary": "200 https://artsystem-group.pl/ 0",
+      "statusLines": [
+        "HTTP/1.1 200 OK"
+      ],
+      "locations": [],
+      "securityHeaders": [],
+      "setCookie": false,
+      "cache": [
+        "Vary: Accept-Encoding"
+      ]
+    },
+    {
+      "url": "http://artsystem-group.pl/",
+      "curlExit": 0,
+      "summary": "200 http://artsystem-group.pl/ 0",
+      "statusLines": [
+        "HTTP/1.1 200 OK"
+      ],
+      "locations": [],
+      "securityHeaders": [],
+      "setCookie": false,
+      "cache": [
+        "Vary: Accept-Encoding"
+      ]
+    },
+    {
+      "url": "https://www.artsystem-group.pl/",
+      "curlExit": 0,
+      "summary": "200 https://www.artsystem-group.pl/ 0",
+      "statusLines": [
+        "HTTP/1.1 200 OK"
+      ],
+      "locations": [],
+      "securityHeaders": [],
+      "setCookie": false,
+      "cache": [
+        "Vary: Accept-Encoding"
+      ]
+    },
+    {
+      "url": "http://www.artsystem-group.pl/",
+      "curlExit": 0,
+      "summary": "200 http://www.artsystem-group.pl/ 0",
+      "statusLines": [
+        "HTTP/1.1 200 OK"
+      ],
+      "locations": [],
+      "securityHeaders": [],
+      "setCookie": false,
+      "cache": [
+        "Vary: Accept-Encoding"
+      ]
+    },
+    {
+      "url": "https://artsystem-group.pl/index.html",
+      "curlExit": 0,
+      "summary": "200 https://artsystem-group.pl/index.html 0",
+      "statusLines": [
+        "HTTP/1.1 200 OK"
+      ],
+      "locations": [],
+      "securityHeaders": [],
+      "setCookie": false,
+      "cache": [
+        "Vary: Accept-Encoding"
+      ]
+    },
+    {
+      "url": "https://artsystem-group.pl/privacy.html",
+      "curlExit": 0,
+      "summary": "200 https://artsystem-group.pl/privacy.html 0",
+      "statusLines": [
+        "HTTP/1.1 200 OK"
+      ],
+      "locations": [],
+      "securityHeaders": [],
+      "setCookie": false,
+      "cache": [
+        "Vary: Accept-Encoding"
+      ]
+    },
+    {
+      "url": "https://artsystem-group.pl/robots.txt",
+      "curlExit": 0,
+      "summary": "404 https://artsystem-group.pl/robots.txt 0",
+      "statusLines": [
+        "HTTP/1.1 404 Not Found"
+      ],
+      "locations": [],
+      "securityHeaders": [],
+      "setCookie": false,
+      "cache": [
+        "Cache-Control: private, no-cache, no-store, must-revalidate, max-age=0"
+      ]
+    },
+    {
+      "url": "https://artsystem-group.pl/sitemap.xml",
+      "curlExit": 0,
+      "summary": "200 https://artsystem-group.pl/sitemap.xml 0",
+      "statusLines": [
+        "HTTP/1.1 200 OK"
+      ],
+      "locations": [],
+      "securityHeaders": [],
+      "setCookie": false,
+      "cache": []
+    },
+    {
+      "url": "https://artsystem-group.pl/audit-nonexistent-20261113.html",
+      "curlExit": 0,
+      "summary": "404 https://artsystem-group.pl/audit-nonexistent-20261113.html 0",
+      "statusLines": [
+        "HTTP/1.1 404 Not Found"
+      ],
+      "locations": [],
+      "securityHeaders": [],
+      "setCookie": false,
+      "cache": [
+        "Cache-Control: private, no-cache, no-store, must-revalidate, max-age=0"
+      ]
+    },
+    {
+      "url": "https://artsystem-group.pl/style.css",
+      "curlExit": 0,
+      "summary": "200 https://artsystem-group.pl/style.css 0",
+      "statusLines": [
+        "HTTP/1.1 200 OK"
+      ],
+      "locations": [],
+      "securityHeaders": [],
+      "setCookie": false,
+      "cache": [
+        "Cache-Control: public, max-age=604800",
+        "Vary: Accept-Encoding"
+      ]
+    }
+  ],
+  "productionBrowser": [
+    {
+      "url": "https://artsystem-group.pl/",
+      "title": "ART SYSTEM GROUP - Intelligent Security Systems",
+      "width": 1440,
+      "scrollWidth": 1425,
+      "h1": "Bezpieczeństwo\n                infrastruktury,\n\n                \n                    która działa.",
+      "hasOriginalHero": true,
+      "serviceWidths": [
+        244.453125,
+        244.453125,
+        244.453125,
+        244.453125
+      ],
+      "hosts": [
+        "fonts.googleapis.com",
+        "artsystem-group.pl"
+      ],
+      "hasPrivacyLink": false
+    },
+    {
+      "url": "https://artsystem-group.pl/",
+      "title": "ART SYSTEM GROUP - Intelligent Security Systems",
+      "width": 390,
+      "scrollWidth": 390,
+      "h1": "Bezpieczeństwo\n                infrastruktury,\n\n                \n                    która działa.",
+      "hasOriginalHero": true,
+      "serviceWidths": [
+        61.375,
+        58.453125,
+        58.46875,
+        58.453125
+      ],
+      "hosts": [
+        "fonts.googleapis.com",
+        "artsystem-group.pl",
+        "fonts.gstatic.com"
+      ],
+      "hasPrivacyLink": false
+    }
+  ],
+  "hostingChecks": {
+    "gitHead": {
+      "checkedOnly": "/.git/HEAD; no config, index, objects or history fetched",
+      "statusLine": {
+        "value": "HTTP/1.1 200 OK",
+        "PSPath": "C:\\Users\\kaczy\\Desktop\\Projekty\\art-system-group-website\\.idea\\live-evidence\\git-head-headers.txt",
+        "PSParentPath": "C:\\Users\\kaczy\\Desktop\\Projekty\\art-system-group-website\\.idea\\live-evidence",
+        "PSChildName": "git-head-headers.txt",
+        "PSDrive": {
+          "CurrentLocation": "Users\\kaczy\\Desktop\\Projekty\\art-system-group-website\\.idea",
+          "Name": "C",
+          "Provider": "Microsoft.PowerShell.Core\\FileSystem",
+          "Root": "C:\\",
+          "Description": "Windows",
+          "MaximumSize": null,
+          "Credential": "System.Management.Automation.PSCredential",
+          "DisplayRoot": null
+        },
+        "PSProvider": {
+          "ImplementingType": "Microsoft.PowerShell.Commands.FileSystemProvider",
+          "HelpFile": "System.Management.Automation.dll-Help.xml",
+          "Name": "FileSystem",
+          "PSSnapIn": "Microsoft.PowerShell.Core",
+          "ModuleName": "Microsoft.PowerShell.Core",
+          "Module": null,
+          "Description": "",
+          "Capabilities": 52,
+          "Home": "C:\\Users\\kaczy",
+          "Drives": "C"
+        },
+        "ReadCount": 1
+      },
+      "bodyBytes": 16207,
+      "gitHeadRecognized": false
+    },
+    "assetsDirectoryStatus": "HTTP/1.1 403 Forbidden",
+    "deploymentConfigStatus": "HTTP/1.1 404 Not Found",
+    "cssGzipObserved": true,
+    "homeVariantsMatchOriginal": [
+      {
+        "url": "https://artsystem-group.pl/",
+        "matches": true
+      },
+      {
+        "url": "http://artsystem-group.pl/",
+        "matches": true
+      },
+      {
+        "url": "https://www.artsystem-group.pl/",
+        "matches": true
+      },
+      {
+        "url": "http://www.artsystem-group.pl/",
+        "matches": true
+      },
+      {
+        "url": "https://artsystem-group.pl/index.html",
+        "matches": true
+      }
+    ]
+  },
+  "assets": [
+    {
+      "source": "hero-eye.png",
+      "output": "hero-eye-1672.webp",
+      "originalBytes": 1834049,
+      "bytes": 193692,
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "source": "hero-eye.png",
+      "output": "hero-eye-960.webp",
+      "originalBytes": 1834049,
+      "bytes": 80816,
+      "width": 960,
+      "height": 540
+    },
+    {
+      "source": "system-cctv.jpg",
+      "output": "system-cctv-720.webp",
+      "originalBytes": 2012619,
+      "bytes": 59546,
+      "width": 720,
+      "height": 900
+    },
+    {
+      "source": "system-sswin.jpg",
+      "output": "system-sswin-720.webp",
+      "originalBytes": 2399838,
+      "bytes": 79780,
+      "width": 720,
+      "height": 960
+    },
+    {
+      "source": "system-lan.jpg",
+      "output": "system-lan-720.webp",
+      "originalBytes": 1814905,
+      "bytes": 74650,
+      "width": 720,
+      "height": 960
+    },
+    {
+      "source": "system-electric.jpg",
+      "output": "system-electric-720.webp",
+      "originalBytes": 2024302,
+      "bytes": 105088,
+      "width": 720,
+      "height": 960
+    },
+    {
+      "source": "project-realizacja-1.png",
+      "output": "project-realizacja-1-900.webp",
+      "originalBytes": 2560420,
+      "bytes": 210152,
+      "width": 900,
+      "height": 1599
+    },
+    {
+      "source": "project-raben.jpg",
+      "output": "project-raben-900.webp",
+      "originalBytes": 2044212,
+      "bytes": 161814,
+      "width": 900,
+      "height": 1200
+    },
+    {
+      "source": "favicon.png",
+      "output": "favicon-32.png",
+      "originalBytes": 353769,
+      "bytes": 1118,
+      "width": 32,
+      "height": 32
+    },
+    {
+      "source": "favicon.png",
+      "output": "apple-touch-icon.png",
+      "originalBytes": 353769,
+      "bytes": 14179,
+      "width": 180,
+      "height": 180
+    },
+    {
+      "source": "hero-eye.png",
+      "output": "og-image.jpg",
+      "originalBytes": 1834049,
+      "bytes": 163457,
+      "width": 1200,
+      "height": 630
+    }
+  ],
+  "sourceChecksums": {
+    "index.html": "6f361fd8278ed52ae87a252cc5bd4b6fc01f5d3e715ef017cf649ba875c5e6a5",
+    "privacy.html": "95abd974a584650809adb7f2d8c2257581a96cef8c83dab70856830cdea44253",
+    "style.css": "3e1c0ece6fa3270670c7bd1793764bd66dba584e42928a0cb141915e8ccc57c1",
+    "script.js": "9d78946506e88f0c1ad80c7ed40091f85df3e57cd76d33c06a87acc51bcbc341",
+    ".cpanel.yml": "2f56a77c21d131fe7ace8dec2d91ba85b30c47b00f534f9edda810a3c1431761",
+    ".gitignore": "4191d07c8d3c7d285d70a0dae63e4a8e644aea57448fd290b23e521ad3ff8ce0",
+    "sitemap.xml": "99a39cf530781393fe2a2326c066ef52f5a74422f1589369bb7524d6c00aedc1",
+    "robots.txt": "487e98665892e0b34b2bb0b52484a5c51fe17fd62946a6cae2144f8b678d9950"
+  },
+  "secretScan": {
+    "scope": "Tracked text files and textual diffs in local Git history; limited to private-key, AWS access-key and classic GitHub token patterns; no values stored",
+    "currentMatches": 0,
+    "historyMatches": 0
+  },
+  "deploymentDryRun": {
+    "passed": true,
+    "commands": 7,
+    "documentsAndCode": 6,
+    "assets": 23,
+    "destination": ".idea/deploy-output; hosting export replaced before execution; original deployment target never used"
+  },
+  "finalSourceVerification": {
+    "passed": true,
+    "sourceFiles": 8,
+    "localResourcesExist": true,
+    "deploymentDryRun": {
+      "passed": true,
+      "commands": 7,
+      "documentsAndCode": 6,
+      "assets": 23,
+      "destination": ".idea/deploy-output; hosting export replaced before execution; original deployment target never used"
+    }
+  }
+}
