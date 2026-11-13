@@ -1,159 +1,83 @@
 document.addEventListener("DOMContentLoaded", () => {
-
-    /* =====================================================
-       MOBILE MENU
-    ===================================================== */
-
-    const menuButton =
-        document.querySelector(".mobile-menu-button");
-
-    const mobileMenu =
-        document.querySelector(".mobile-menu");
-
-    const mobileLinks =
-        document.querySelectorAll(".mobile-menu a");
-
+    const menuButton = document.querySelector(".mobile-menu-button");
+    const mobileMenu = document.querySelector(".mobile-menu");
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
     if (menuButton && mobileMenu) {
+        const desktop = window.matchMedia("(min-width: 761px)");
+        const background = document.querySelectorAll("main, .site-footer, .site-header .brand");
+        const menuLinks = [...mobileMenu.querySelectorAll("a")];
+        let isOpen = false;
 
-        menuButton.addEventListener("click", () => {
+        const setMenuOpen = (open, returnFocus = false) => {
+            isOpen = open;
+            mobileMenu.hidden = !open;
+            mobileMenu.classList.toggle("open", open);
+            document.body.classList.toggle("menu-open", open);
+            menuButton.setAttribute("aria-expanded", String(open));
+            menuButton.setAttribute("aria-label", open ? "Zamknij menu" : "Otwórz menu");
+            background.forEach(element => { element.inert = open; });
+            if (open) menuLinks[0]?.focus();
+            else if (returnFocus) menuButton.focus();
+        };
 
-            const isOpen =
-                mobileMenu.classList.toggle("open");
+        menuButton.hidden = false;
+        menuButton.addEventListener("click", () => setMenuOpen(!isOpen, isOpen));
+        menuLinks.forEach(link => link.addEventListener("click", () => setMenuOpen(false)));
+        desktop.addEventListener("change", () => setMenuOpen(false));
 
-            document.body.classList.toggle(
-                "menu-open",
-                isOpen
-            );
-
-            menuButton.setAttribute(
-                "aria-expanded",
-                String(isOpen)
-            );
-
+        document.addEventListener("keydown", event => {
+            if (!isOpen) return;
+            if (event.key === "Escape") {
+                event.preventDefault();
+                setMenuOpen(false, true);
+            } else if (event.key === "Tab") {
+                const controls = [menuButton, ...menuLinks];
+                const index = controls.indexOf(document.activeElement);
+                const next = (index + (event.shiftKey ? -1 : 1) + controls.length) % controls.length;
+                event.preventDefault();
+                controls[next].focus();
+            }
         });
-
-
-        mobileLinks.forEach(link => {
-
-            link.addEventListener("click", () => {
-
-                mobileMenu.classList.remove("open");
-
-                document.body.classList.remove(
-                    "menu-open"
-                );
-
-                menuButton.setAttribute(
-                    "aria-expanded",
-                    "false"
-                );
-
-            });
-
-        });
-
     }
 
+    const motionButton = document.querySelector(".motion-toggle");
+    if (motionButton) {
+        motionButton.hidden = false;
+        motionButton.addEventListener("click", () => {
+            const paused = document.documentElement.classList.toggle("motion-paused");
+            motionButton.setAttribute("aria-pressed", String(paused));
+            motionButton.textContent = paused ? "Wznów animacje" : "Wstrzymaj animacje";
+        });
+    }
 
-    /* =====================================================
-       HEADER / NAV SMOOTH LINKS
-    ===================================================== */
+    const revealElements = document.querySelectorAll(
+        ".technology-card, .project, .process-step, .contact-card"
+    );
 
-    const anchorLinks =
-        document.querySelectorAll('a[href^="#"]');
-
-    anchorLinks.forEach(link => {
-
-        link.addEventListener("click", event => {
-
-            const id =
-                link.getAttribute("href");
-
-            if (!id || id === "#") {
-                return;
-            }
-
-            const target =
-                document.querySelector(id);
-
-            if (!target) {
-                return;
-            }
-
-            event.preventDefault();
-
-            target.scrollIntoView({
-                behavior: "smooth",
-                block: "start"
+    if ("IntersectionObserver" in window && !reducedMotion.matches) {
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.remove("reveal-pending");
+                observer.unobserve(entry.target);
             });
-
-        });
-
-    });
-
-
-    /* =====================================================
-       SIMPLE REVEAL
-    ===================================================== */
-
-    const revealElements =
-        document.querySelectorAll(
-            ".technology-card, .project, .process-step, .contact-card"
-        );
-
-
-    if (
-        "IntersectionObserver" in window &&
-        !window.matchMedia(
-            "(prefers-reduced-motion: reduce)"
-        ).matches
-    ) {
+        }, { threshold: 0.05 });
 
         revealElements.forEach(element => {
-
-            element.style.opacity = "0";
-            element.style.transform =
-                "translateY(20px)";
-
-            element.style.transition =
-                "opacity .6s ease, transform .6s ease";
-
-        });
-
-
-        const observer =
-            new IntersectionObserver(
-                entries => {
-
-                    entries.forEach(entry => {
-
-                        if (!entry.isIntersecting) {
-                            return;
-                        }
-
-                        entry.target.style.opacity = "1";
-
-                        entry.target.style.transform =
-                            "translateY(0)";
-
-                        observer.unobserve(
-                            entry.target
-                        );
-
-                    });
-
-                },
-                {
-                    threshold: 0.12
-                }
-            );
-
-
-        revealElements.forEach(element => {
+            element.classList.add("reveal-pending");
             observer.observe(element);
         });
 
+        const showAll = () => {
+            revealElements.forEach(element => element.classList.remove("reveal-pending"));
+            observer.disconnect();
+        };
+        reducedMotion.addEventListener("change", showAll, { once: true });
+        motionButton?.addEventListener("click", showAll, { once: true });
+        document.addEventListener("focusin", event => {
+            const card = event.target.closest(".reveal-pending");
+            if (card) card.classList.remove("reveal-pending");
+        });
     }
-
 });

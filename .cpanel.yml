@@ -2,9 +2,9 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/dm80753/public_html/
-    - /bin/cp index.html $DEPLOYPATH
-    - /bin/cp style.css $DEPLOYPATH
-    - /bin/cp script.js $DEPLOYPATH
-    - /bin/mkdir -p $DEPLOYPATH/assets
-    - /bin/cp -R assets/. $DEPLOYPATH/assets/
-    - /bin/cp sitemap.xml $DEPLOYPATH
+    - /bin/mkdir -p "$DEPLOYPATH/assets"
+    - /bin/cp -R assets/. "$DEPLOYPATH/assets/"
+    - /bin/cp style.css script.js "$DEPLOYPATH"
+    - /bin/cp robots.txt sitemap.xml "$DEPLOYPATH"
+    - /bin/cp privacy.html "$DEPLOYPATH"
+    - /bin/cp index.html "$DEPLOYPATH"

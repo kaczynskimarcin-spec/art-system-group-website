@@ -15,9 +15,7 @@
             content="ART SYSTEM GROUP – projektowanie, montaż i integracja systemów CCTV, SSWiN, LAN oraz instalacji elektrycznych dla przemysłu, logistyki i obiektów komercyjnych."
     >
 
-    <title>
-        ART SYSTEM GROUP - Intelligent Security Systems
-    </title>
+    <title>CCTV, SSWiN, LAN i instalacje elektryczne | ART SYSTEM GROUP</title>
 
 
     <!-- FAVICON -->
@@ -25,40 +23,63 @@
     <link
             rel="icon"
             type="image/png"
-            href="assets/favicon.png?v=2"
+            href="assets/favicon-32.png"
     >
 
 
-    <!-- FONT -->
-
-    <link
-            rel="preconnect"
-            href="https://fonts.googleapis.com"
-    >
-
-    <link
-            rel="preconnect"
-            href="https://fonts.gstatic.com"
-            crossorigin
-    >
-
-    <link
-            href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
-            rel="stylesheet"
-    >
-
-
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+    <link rel="preload" href="assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
     <!-- CSS -->
 
     <link
             rel="stylesheet"
-            href="style.css"
+            href="style.css?v=3e1c0ece6fa3"
     >
 
+    <link rel="canonical" href="https://artsystem-group.pl/">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pl_PL">
+    <meta property="og:site_name" content="ART SYSTEM GROUP">
+    <meta property="og:title" content="CCTV, SSWiN, LAN i instalacje elektryczne | ART SYSTEM GROUP">
+    <meta property="og:description" content="Projektowanie, montaż i integracja systemów bezpieczeństwa oraz instalacji dla obiektów komercyjnych i przemysłowych.">
+    <meta property="og:url" content="https://artsystem-group.pl/">
+    <meta property="og:image" content="https://artsystem-group.pl/assets/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="ART SYSTEM GROUP — inteligentne systemy bezpieczeństwa">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ART SYSTEM GROUP — systemy bezpieczeństwa i instalacje">
+    <meta name="twitter:description" content="CCTV, SSWiN, LAN i instalacje elektryczne dla obiektów komercyjnych i przemysłowych.">
+    <meta name="twitter:image" content="https://artsystem-group.pl/assets/og-image.jpg">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "@id": "https://artsystem-group.pl/#company",
+      "name": "ART SYSTEM GROUP",
+      "legalName": "ART-SYSTEM spółka z ograniczoną odpowiedzialnością",
+      "url": "https://artsystem-group.pl/",
+      "image": "https://artsystem-group.pl/assets/og-image.jpg",
+      "logo": "https://artsystem-group.pl/assets/apple-touch-icon.png",
+      "description": "Projektowanie, montaż i integracja systemów CCTV, SSWiN, LAN oraz instalacji elektrycznych dla obiektów komercyjnych i przemysłowych.",
+      "telephone": ["+48506711071", "+48515408386"],
+      "email": "biuro@artsystem-group.pl",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "ul. Wólczańska 4/70",
+        "postalCode": "90-720",
+        "addressLocality": "Łódź",
+        "addressCountry": "PL"
+      }
+    }
+    </script>
 </head>
 
 
 <body>
+
+    <a class="skip-link" href="#top">Przejdź do treści</a>
 
 
 <!-- =========================================================
@@ -142,6 +163,9 @@
 
         <button
                 class="mobile-menu-button"
+                type="button"
+                aria-controls="mobile-navigation"
+                hidden
                 aria-label="Otwórz menu"
                 aria-expanded="false"
         >
@@ -161,7 +185,7 @@
      MOBILE MENU
 ========================================================= -->
 
-<div class="mobile-menu">
+<nav class="mobile-menu" id="mobile-navigation" aria-label="Menu mobilne" hidden>
 
     <a href="#about">
         O nas
@@ -183,21 +207,34 @@
         Kontakt
     </a>
 
-</div>
+</nav>
 
 
-<main id="top">
+<noscript>
+    <nav class="no-script-nav" aria-label="Nawigacja bez JavaScript">
+        <a href="#technologies">Oferta</a>
+        <a href="#projects">Realizacje</a>
+        <a href="#contact">Kontakt</a>
+    </nav>
+</noscript>
+
+<main id="top" tabindex="-1">
 
 
     <!-- =====================================================
          HERO
     ====================================================== -->
 
-    <section class="hero" id="about">
+    <section class="hero" id="about" tabindex="-1">
 
-        <div class="hero-bg">
+        <div class="hero-bg" aria-hidden="true">
             <img
-                    src="assets/hero-eye.png"
+                    src="assets/hero-eye-1672.webp"
+                    srcset="assets/hero-eye-960.webp 960w, assets/hero-eye-1672.webp 1672w"
+                    sizes="(max-width: 1600px) 100vw, 1600px"
+                    width="1672"
+                    height="941"
+                    fetchpriority="high"
                     alt=""
                     class="hero-bg-image"
             >
@@ -278,14 +315,12 @@
 
 
         </div>
-        <div class="hero-bg" aria-hidden="true">
-            <img
-                    src="assets/hero-eye.png"
-                    alt=""
-                    class="hero-bg-image"
-            >
-        </div>
 
+
+
+        <button class="motion-toggle" type="button" aria-pressed="false" hidden>
+            Wstrzymaj animacje
+        </button>
 
         <!-- MINI STATS -->
 
@@ -327,7 +362,7 @@
 
     <section
             class="experience"
-            id="experience"
+            id="experience" tabindex="-1"
     >
 
         <div class="experience-label">
@@ -420,7 +455,7 @@
 
     <section
             class="technologies"
-            id="technologies"
+            id="technologies" tabindex="-1"
     >
 
 
@@ -472,14 +507,10 @@
         <!-- CCTV -->
 
         <article class="technology-card technology-cctv">
+            <img class="technology-image" src="assets/system-cctv-720.webp"
+                 width="720" height="900" alt="" loading="lazy" decoding="async">
 
             <div class="technology-gradient"></div>
-
-
-            <div class="technology-number">
-
-
-            </div>
 
 
             <div class="technology-content">
@@ -505,14 +536,10 @@
         <!-- SSWIN -->
 
         <article class="technology-card technology-sswin">
+            <img class="technology-image" src="assets/system-sswin-720.webp"
+                 width="720" height="960" alt="" loading="lazy" decoding="async">
 
             <div class="technology-gradient"></div>
-
-
-            <div class="technology-number">
-
-
-            </div>
 
 
             <div class="technology-content">
@@ -537,14 +564,10 @@
         <!-- LAN -->
 
         <article class="technology-card technology-lan">
+            <img class="technology-image" src="assets/system-lan-720.webp"
+                 width="720" height="960" alt="" loading="lazy" decoding="async">
 
             <div class="technology-gradient"></div>
-
-
-            <div class="technology-number">
-
-
-            </div>
 
 
             <div class="technology-content">
@@ -570,14 +593,10 @@
         <!-- ELEKTRYKA -->
 
         <article class="technology-card technology-electric">
+            <img class="technology-image" src="assets/system-electric-720.webp"
+                 width="720" height="960" alt="" loading="lazy" decoding="async">
 
             <div class="technology-gradient"></div>
-
-
-            <div class="technology-number">
-
-
-            </div>
 
 
             <div class="technology-content">
@@ -610,20 +629,12 @@
 
 
     <!-- =====================================================
-         PROJECTS
-    ====================================================== -->
-
-    <!-- =====================================================
-      PROJECTS
- ====================================================== -->
-
-    <!-- =====================================================
      PROJECTS
 ====================================================== -->
 
     <section
             class="projects"
-            id="projects"
+            id="projects" tabindex="-1"
     >
 
         <!-- INTRO -->
@@ -641,24 +652,6 @@
                 rozwiązania.
             </h2>
 
-            <div class="project-arrows">
-
-                <button
-                        type="button"
-                        aria-label="Poprzednia realizacja"
-                >
-                    ←
-                </button>
-
-                <button
-                        type="button"
-                        aria-label="Następna realizacja"
-                >
-                    →
-                </button>
-
-            </div>
-
         </div>
 
 
@@ -667,6 +660,9 @@
         <article class="project">
 
             <div class="project-image project-dpd">
+                <img class="project-photo" src="assets/project-realizacja-1-900.webp"
+                     width="900" height="1599" alt="Prace instalacyjne z podnośnika w hali"
+                     loading="lazy" decoding="async">
 
             <span class="project-photo-label">
                 01
@@ -730,6 +726,9 @@
         <article class="project">
 
             <div class="project-image project-raben">
+                <img class="project-photo" src="assets/project-raben-900.webp"
+                     width="900" height="1200" alt="Okablowanie i urządzenia w szafie sieciowej"
+                     loading="lazy" decoding="async">
 
             <span class="project-photo-label">
                 02
@@ -859,7 +858,7 @@
 
     <section
             class="process"
-            id="process"
+            id="process" tabindex="-1"
     >
 
 
@@ -1040,7 +1039,7 @@
 
     <section
             class="contact"
-            id="contact"
+            id="contact" tabindex="-1"
     >
 
         <div class="contact-overlay"></div>
@@ -1143,7 +1142,7 @@
                         ☎
                     </span>
 
-                    +48 506 711 071
+                    +48&nbsp;506&nbsp;711&nbsp;071
 
                 </a>
 
@@ -1206,7 +1205,7 @@
                         ☎
                     </span>
 
-                    +48 515 408 386
+                    +48&nbsp;515&nbsp;408&nbsp;386
 
                 </a>
 
@@ -1273,7 +1272,7 @@
     </a>
 
 
-    <nav>
+    <nav aria-label="Menu w stopce">
 
         <a href="#about">
             O nas
@@ -1299,6 +1298,7 @@
 
 
     <div class="footer-copy">
+        <a href="privacy.html">Polityka prywatności</a>
 
         <span>
 
@@ -1326,10 +1326,13 @@
 
     </a>
 
+    <p class="company-details">
+        ART-SYSTEM sp. z o.o. · ul. Wólczańska 4/70, 90-720 Łódź
+    </p>
 </footer>
 
 
-<script src="script.js"></script>
+<script src="script.js?v=9d78946506e8" defer></script>
 
 </body>
 
