@@ -405,7 +405,7 @@ img {
     transform: scale(1.03);
 
     animation:
-            heroBgFloat 10s ease-in-out infinite;
+            heroBgFloat 10s ease-in-out .45 forwards;
 }
 
 
@@ -582,7 +582,7 @@ img {
             inset 0 0 30px rgba(0, 170, 255, .08);
 
     animation:
-            orbitSpin 18s linear infinite;
+            orbitSpin 18s linear .25 forwards;
 }
 
 .orbit-1::before,
@@ -634,7 +634,7 @@ img {
             rgba(120, 220, 255, .28);
 
     animation:
-            orbitSpinReverse 28s linear infinite;
+            orbitSpinReverse 28s linear .16 forwards;
 }
 
 .orbit-2::before {
@@ -664,7 +664,7 @@ img {
             blur(.2px);
 
     animation:
-            orbitSpin 40s linear infinite;
+            orbitSpin 40s linear .1125 forwards;
 }
 
 .orbit-3::after {
@@ -746,11 +746,13 @@ img {
             );
 
     animation:
-            orbitSpinReverse 22s linear infinite;
+            orbitSpinReverse 22s linear .2 forwards;
 }
 
 
-/* HERO ANIMATIONS */
+/* HERO ANIMATIONS
+   WCAG 2.2.2: finite fractional iterations keep the original speed and stop
+   within 4.5 seconds. The forwards fill retains the final decorative frame. */
 
 @keyframes heroBgFloat {
 
@@ -2438,28 +2440,6 @@ img {
     border-top: 1px solid rgba(255, 255, 255, .15);
 }
 
-.motion-toggle {
-    position: absolute;
-    z-index: 6;
-    top: 105px;
-    right: 5%;
-    min-height: 32px;
-    padding: 5px 10px;
-    border: 1px solid rgba(255, 255, 255, .4);
-    border-radius: 3px;
-    color: #fff;
-    background: #071522;
-    font-size: 12px;
-    cursor: pointer;
-}
-
-.motion-paused *,
-.motion-paused *::before,
-.motion-paused *::after {
-    animation-play-state: paused !important;
-    scroll-behavior: auto !important;
-}
-
 .technology-card,
 .project,
 .process-step,
@@ -2607,11 +2587,6 @@ img {
 }
 
 @media (max-width: 760px) {
-    .motion-toggle {
-        top: 82px;
-        right: 6%;
-    }
-
     .technology-card {
         min-width: 0;
         padding: 20px;
@@ -2651,10 +2626,6 @@ img {
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .motion-toggle {
-        display: none;
-    }
-
     .reveal-pending {
         opacity: 1;
         transform: none;

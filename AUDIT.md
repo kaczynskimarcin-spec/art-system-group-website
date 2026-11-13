@@ -1,5 +1,7 @@
 # ART SYSTEM GROUP — audyt i przygotowane poprawki
 
+> Aktualizacja 13.11.2026: wersja opisana w pierwotnym audycie została zapisana i wysłana na GitHub jako `81967e5`. Późniejszą zmianę animacji i karty elektrycznej opisuje sekcja 9 oraz [audit/motion-results.json](audit/motion-results.json). Informacje poniżej o braku commita/pushowania i przycisku pauzy dotyczą wcześniejszego etapu.
+
 Data: 13.11.2026. Repozytorium: `kaczynskimarcin-spec/art-system-group-website`.
 Punkt wyjścia: commit `3b905b4` na lokalnej gałęzi `redesign`, czysty katalog roboczy.
 Zmiany przygotowano na osobnej gałęzi `audit/seo-security-optimization`.
@@ -161,3 +163,13 @@ Nie sprawdzono kont cPanel/SSH/FTP, uprawnień plików, logów i kopii zapasowyc
 10. Przy regresji odtworzyć kopię plików albo wdrożyć znany, poprzedni commit. Przy błędzie 500 po zmianie `.htaccess` przywrócić jego kopię. Nie wykonywać resetu historii Git ani masowego usuwania katalogu produkcyjnego.
 
 Źródła konfiguracji: [nagłówki Apache](https://httpd.apache.org/docs/2.4/mod/mod_headers.html), [konfiguracja i zgodność LiteSpeed](https://docs.litespeedtech.com/lsws/configuration/). Przykład wymaga rzeczywistych uprawnień i ustawień hostingu, których audyt nie otrzymał.
+
+## 9. Usunięcie kontrolki animacji i strzałki — 13.11.2026
+
+Na prośbę użytkownika przed zmianami wykonano commit i push dotychczasowej wersji: `81967e5`, gałąź `audit/seo-security-optimization`.
+
+Usunięto przycisk „Wstrzymaj animacje”, jego obsługę JavaScript i style oraz strzałkę w karcie „Instalacje elektryczne”. Zachowano oryginalne klatki i tempo animacji. Ułamkowa liczba powtórzeń kończy ruch tła i orbit po 4,4–4,5 s; `forwards` utrzymuje ostatnią klatkę. Rozwiązanie działa także bez JavaScriptu. Nie ma już automatycznego ruchu trwającego ponad 5 sekund, który wymagałby kontrolki według [WCAG 2.2.2](https://www.w3.org/WAI/WCAG22/Understanding/pause-stop-hide.html).
+
+Zachowano `prefers-reduced-motion`, reakcję na zmianę preferencji w czasie działania strony, animacje ujawniania kart i efekty interakcji. Pozostałe zmiany SEO, wydajności i dostępności zachowano. Zaktualizowano wersje CSS i JS w adresach zasobów, także w polityce prywatności.
+
+Weryfikacja: 183 zaliczone asercje, 0 niepowodzeń; oba dokumenty HTML poprawne; JavaScript przechodzi `node --check`. Chrome: obie strony przy 320, 390, 760 i 1440 px; testy klawiatury, menu, anchorów, reduced motion i wersji bez JS. Potwierdzono rzeczywisty ruch, automatyczne zakończenie i utrzymanie ostatniej klatki. Axe-core: 0 naruszeń na obu stronach przy 390 i 1440 px. Przejrzano zrzuty mobilny i desktopowy. Szczegóły i sumy SHA-256 testowanych źródeł: [audit/motion-results.json](audit/motion-results.json).

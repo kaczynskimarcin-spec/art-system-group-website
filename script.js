@@ -41,16 +41,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    const motionButton = document.querySelector(".motion-toggle");
-    if (motionButton) {
-        motionButton.hidden = false;
-        motionButton.addEventListener("click", () => {
-            const paused = document.documentElement.classList.toggle("motion-paused");
-            motionButton.setAttribute("aria-pressed", String(paused));
-            motionButton.textContent = paused ? "Wznów animacje" : "Wstrzymaj animacje";
-        });
-    }
-
     const revealElements = document.querySelectorAll(
         ".technology-card, .project, .process-step, .contact-card"
     );
@@ -74,7 +64,6 @@ document.addEventListener("DOMContentLoaded", () => {
             observer.disconnect();
         };
         reducedMotion.addEventListener("change", showAll, { once: true });
-        motionButton?.addEventListener("click", showAll, { once: true });
         document.addEventListener("focusin", event => {
             const card = event.target.closest(".reveal-pending");
             if (card) card.classList.remove("reveal-pending");

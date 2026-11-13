@@ -1,0 +1,143 @@
+{
+  "date": "2026-11-13",
+  "checkpointBeforeChanges": "81967e5",
+  "scope": "Remove visible animation control and electric-card arrow; verify WCAG 2.2.2 and preserve reduced motion, SEO, performance and accessibility improvements.",
+  "method": "Local Node HTTP server with enforced CSP; isolated headless Chrome via Puppeteer; html-validate; axe-core. Source code only; no hosting deployment.",
+  "checks": {
+    "passed": 183,
+    "failed": 0
+  },
+  "coverage": {
+    "pages": [
+      "/",
+      "/privacy.html"
+    ],
+    "widths": [
+      320,
+      390,
+      760,
+      1440
+    ],
+    "interactions": [
+      "Enter",
+      "Shift+Tab",
+      "Escape",
+      "focus return and containment",
+      "contact anchors",
+      "desktop breakpoint",
+      "privacy contact link"
+    ],
+    "motion": [
+      "original speeds and actual movement",
+      "finite ending and persistent final frames",
+      "initial reduced motion",
+      "live preference change",
+      "without JavaScript",
+      "reduced motion without JavaScript"
+    ],
+    "regression": [
+      "metadata and JSON-LD",
+      "images and fonts",
+      "responsive layout",
+      "local resources",
+      "CSP",
+      "no cookies or storage",
+      "cache version hashes",
+      "HTML validation"
+    ]
+  },
+  "motion": [
+    {
+      "selector": "hero-bg-image",
+      "duration": 10000,
+      "iterations": 0.45,
+      "endTime": 4500,
+      "state": "finished",
+      "fill": "forwards"
+    },
+    {
+      "selector": "orbit orbit-1",
+      "duration": 18000,
+      "iterations": 0.25,
+      "endTime": 4500,
+      "state": "finished",
+      "fill": "forwards"
+    },
+    {
+      "selector": "orbit orbit-2",
+      "duration": 28000,
+      "iterations": 0.16,
+      "endTime": 4480,
+      "state": "finished",
+      "fill": "forwards"
+    },
+    {
+      "selector": "orbit orbit-3",
+      "duration": 40000,
+      "iterations": 0.1125,
+      "endTime": 4500,
+      "state": "finished",
+      "fill": "forwards"
+    },
+    {
+      "selector": "orbit orbit-4",
+      "duration": 22000,
+      "iterations": 0.2,
+      "endTime": 4400,
+      "state": "finished",
+      "fill": "forwards"
+    }
+  ],
+  "axe": [
+    {
+      "url": "/",
+      "width": 390,
+      "version": "4.14.0",
+      "violations": [],
+      "manualChecks": [
+        "color-contrast",
+        "label-content-name-mismatch"
+      ]
+    },
+    {
+      "url": "/",
+      "width": 1440,
+      "version": "4.14.0",
+      "violations": [],
+      "manualChecks": [
+        "color-contrast",
+        "label-content-name-mismatch"
+      ]
+    },
+    {
+      "url": "/privacy.html",
+      "width": 390,
+      "version": "4.14.0",
+      "violations": [],
+      "manualChecks": []
+    },
+    {
+      "url": "/privacy.html",
+      "width": 1440,
+      "version": "4.14.0",
+      "violations": [],
+      "manualChecks": []
+    }
+  ],
+  "browserErrors": [],
+  "cancelledResponsiveImageRequestsDuringNavigationOrResize": 4,
+  "note": "Aborted responsive-image requests during a test navigation/viewport change are recorded separately; current images were checked for successful loading and decoding at every viewport. Axe does not establish full WCAG conformance.",
+  "localEvidence": [
+    ".idea/test-motion.mjs",
+    ".idea/motion-results.json",
+    ".idea/motion-after-390.png",
+    ".idea/motion-after-1440.png"
+  ],
+  "sourceChecksums": {
+    "index.html": "e8e38c2b309a17b8b2a9a9c4e4bac767b13c7d71f40875fca674cd7b4f869c85",
+    "privacy.html": "37e8d5d7043015eccb0f58b5a1a954dbc452ce545ccf1f66bad4fd2999220747",
+    "script.js": "c8a52103cdce06dc58c9c4cc4f3a3ce1bb02dcf36aa260bf28ca5e17375ded72",
+    "style.css": "cd28f03602f7ad75f29ec864f1b6f431f1ad3541de3ee152274c8b156088ca03"
+  },
+  "reference": "https://www.w3.org/WAI/WCAG22/Understanding/pause-stop-hide.html"
+}
